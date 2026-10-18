@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const zhTW = {
   ribbonAiCreditNote: '將呼叫 AI 並消耗額度',
@@ -186,7 +186,7 @@ export const zhTW = {
   ribbonReplaceTip: '尋找並取代文字',
   ribbonSelectAll: '全選',
   ribbonSelectAllTip: '選取整份文件',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: '開啟 AI 助理',
   ribbonRemoveTableStyleTip: '移除表格樣式',
   ribbonNoStyle: '無樣式',

@@ -1,10 +1,10 @@
-/**
+﻿/**
  * w:autoHyphenation → CSS hyphens, gated by w:suppressAutoHyphens (github run
  * 20260825 samples 16/91: Word does not hyphenate when pPrDefault carries
  * w:suppressAutoHyphens even though settings.xml enables autoHyphenation).
  */
 import { describe, expect, it } from 'vitest'
-import type { DocDefaults, ParsedDocFull, StyleInfo } from '@genoffice/docx-engine'
+import type { DocDefaults, ParsedDocFull, StyleInfo } from '@work/docx-engine'
 import { docStyleCss } from '../src/renderer/doc-style-css'
 
 ;(globalThis as { CSS?: unknown }).CSS ??= { escape: (s: string) => s }

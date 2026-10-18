@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Comment mark operations for Review → New/Delete Comment.
  *
  * The comment mark stores space-separated ids so overlapping comments share
@@ -8,7 +8,7 @@
 import type { Editor } from '@tiptap/core'
 import type { Node as PmNode } from '@tiptap/pm/model'
 import type { EditorState } from '@tiptap/pm/state'
-import type { CommentInfo } from '@genoffice/docx-engine'
+import type { CommentInfo } from '@work/docx-engine'
 import { TRACK_IGNORE } from './revisions'
 import { wordSegmentAt } from './word-range'
 

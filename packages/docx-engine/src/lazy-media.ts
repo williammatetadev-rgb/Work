@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Lazy media: a large document's browser-renderable pictures stay in the file
  * on disk instead of travelling into the renderer. The zip handed to the
  * renderer carries a fixed-size placeholder per stripped part naming the
@@ -7,9 +7,9 @@
  * original bytes (see zip-splice.ts).
  */
 
-export const LAZY_MEDIA_SCHEME = 'genoffice-docx-media'
+export const LAZY_MEDIA_SCHEME = 'work-docx-media'
 
-const MAGIC = 'GENOFFICE-LAZY-MEDIA\n'
+const MAGIC = 'WORK-LAZY-MEDIA\n'
 const HASH_RE = /^[0-9a-f]{64}$/
 
 export const LAZY_MEDIA_PLACEHOLDER_BYTES = MAGIC.length + 64 + 1

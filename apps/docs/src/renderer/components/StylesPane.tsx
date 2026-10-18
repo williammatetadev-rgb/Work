@@ -1,11 +1,11 @@
-import { useMemo, useState, type MouseEvent as ReactMouseEvent } from 'react'
+﻿import { useMemo, useState, type MouseEvent as ReactMouseEvent } from 'react'
 import type { Editor } from '@tiptap/core'
 import {
   pendingHeadingLevel,
   type DocDefaults,
   type StyleInfo,
   type StyleUpsert,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { useI18n } from '../i18n/locale'
 import {
   activeStyleKey,

@@ -1,6 +1,6 @@
-// A failed run marks the error bubble with a "Sign in to Genspark" button only
-// when Genspark is the active provider — a BYOK user's failure (their own
-// provider's rate limit, say) must not advertise a Genspark sign-in (genoffice#1948).
+﻿// A failed run marks the error bubble with a "Sign in to Work" button only
+// when Work is the active provider — a BYOK user's failure (their own
+// provider's rate limit, say) must not advertise a Work sign-in (work#1948).
 import { beforeAll, describe, expect, it, vi } from 'vitest'
 import { act, createElement } from 'react'
 import { createRoot, type Root } from 'react-dom/client'
@@ -141,7 +141,7 @@ describe('AI error bubble sign-in button', () => {
     }
   })
 
-  it('offers the sign-in button when Genspark is the provider', async () => {
+  it('offers the sign-in button when Work is the provider', async () => {
     const editor = createEditor()
     try {
       let listener: ChunkListener | null = null
@@ -162,7 +162,7 @@ describe('AI error bubble sign-in button', () => {
         createElement(AiPanel, {
           editor,
           blocks: [],
-          settings: settingsWith('genspark'),
+          settings: settingsWith('work'),
           open: true,
           onExpand: () => {},
           onCollapse: () => {},

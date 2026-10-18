@@ -1,4 +1,4 @@
-/**
+﻿/**
  * One figure, on its own: Word's Keyboard Shortcuts sheet.
  * `npx tsx tools/gen-help-shortcut-figure.ts [lang …]`
  *
@@ -102,10 +102,10 @@ async function main(): Promise<void> {
       env: {
         ...hostEnv,
         HOME: home,
-        GENOFFICE_USER_DATA: userData,
-        GENOFFICE_AUTH_DIR: join(home, '.genoffice'),
-        GENOFFICE_NO_SPARE_VIEW: '1',
-        GENOFFICE_LANG: lang,
+        WORK_USER_DATA: userData,
+        WORK_AUTH_DIR: join(home, '.work'),
+        WORK_NO_SPARE_VIEW: '1',
+        WORK_LANG: lang,
       },
     })
 

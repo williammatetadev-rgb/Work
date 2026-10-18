@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+﻿import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { KeyboardEvent, RefObject } from 'react'
 import {
   MAX_LABEL_LENGTH,
   placeholderSource,
   sanitizeLabel,
-} from '@genoffice/agent-core/redact-core'
+} from '@work/agent-core/redact-core'
 
 /**
  * The label field of a "hide from the model" dialog.

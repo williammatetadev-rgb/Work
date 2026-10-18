@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Measures in-document links (bookmark hyperlinks, TOC entries) on the
  * paginated preview so the PDF export can stamp GoTo annotations: Chromium
  * drops fragment links whose target has no `id` in the print job, and the
@@ -12,7 +12,7 @@
  * one whose start lies at or before its flow position, not the clone whose
  * box happens to contain it.
  */
-import type { Block } from '@genoffice/docx-engine'
+import type { Block } from '@work/docx-engine'
 import type { PdfInternalLink } from '../shared/ipc'
 
 interface PageBox {

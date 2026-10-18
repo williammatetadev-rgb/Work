@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Generates the per-file-type document icons that electron-builder bakes into
  * the OS file associations (apps/shell/electron-builder.cjs fileAssociations
  * `icon` field): <type>.icns for the macOS CFBundleDocumentTypes entry and
@@ -93,7 +93,7 @@ async function renderPng(page, svgDataUrl, canvasSize, contentSize) {
 
 const browser = await chromium.launch({ channel: 'chrome', headless: true })
 const page = await browser.newPage({ deviceScaleFactor: 1 })
-const tmp = mkdtempSync(join(tmpdir(), 'genoffice-file-icons-'))
+const tmp = mkdtempSync(join(tmpdir(), 'work-file-icons-'))
 
 try {
   for (const [type, svgName] of Object.entries(TYPES)) {

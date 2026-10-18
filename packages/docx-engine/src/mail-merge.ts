@@ -1,4 +1,4 @@
-import type { Block, Run } from './types'
+﻿import type { Block, Run } from './types'
 
 /**
  * Mail merge, engine half — the data source and the substitution walk.
@@ -7,7 +7,7 @@ import type { Block, Run } from './types'
  * keeps it an instrField run), so what is missing is everything that gives the
  * field a value. This module reads a recipient list, substitutes the fields
  * with one record's data and honours Word's control fields (NEXT / SKIPIF / IF).
- * genoffice#1984.
+ * work#1984.
  *
  * Deliberately no UI here: the panel, the recipient list, the preview and the
  * batch export are all built on top of these two functions, and none of them

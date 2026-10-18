@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import type { Editor } from '@tiptap/core'
 import type { ZoteroCommand } from '../../shared/ipc'
 import {
@@ -10,8 +10,8 @@ import {
   type Block,
   type SourceInfo,
   type TocEntry,
-} from '@genoffice/docx-engine'
-import { Dropdown } from '@genoffice/ui'
+} from '@work/docx-engine'
+import { Dropdown } from '@work/ui'
 import { PromptModal } from './PromptModal'
 import { collectHeadings } from '../editor/headings'
 import { t, useI18n, type StringKey } from '../i18n/locale'

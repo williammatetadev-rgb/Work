@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+﻿import { useRef, useState } from 'react'
 import type { Editor, JSONContent } from '@tiptap/core'
 import type { Node as PmNode } from '@tiptap/pm/model'
 import { TextSelection, type Transaction } from '@tiptap/pm/state'
@@ -7,7 +7,7 @@ import {
   useDismissablePopover,
   wordArtSolidColor,
   type WordArtPreset,
-} from '@genoffice/ui'
+} from '@work/ui'
 import {
   buildLineParagraphXml,
   buildShapeParagraphXml,
@@ -17,7 +17,7 @@ import {
   type HeaderFooter,
   type StyleInfo,
   type TextboxDisplay,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import type { DocsTabInfo } from '../../shared/ipc'
 import { runUiOps } from '../ai/ops'
 import { stepDocsZoom } from '../wheel-zoom'
@@ -1579,7 +1579,7 @@ export function ViewTab({
                     }}
                   >
                     {w.focused ? '✓ ' : ''}
-                    {w.title || 'GenOffice Docs'}
+                    {w.title || 'Work Docs'}
                   </button>
                 ))}
               </div>

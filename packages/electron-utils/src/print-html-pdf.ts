@@ -1,4 +1,4 @@
-/// Render a standalone HTML document to PDF bytes in a hidden window —
+﻿/// Render a standalone HTML document to PDF bytes in a hidden window —
 /// shared by the AI create_document flows (docs / pdf chat creating a new
 /// PDF file). The caller supplies the window so this package keeps its
 /// type-only Electron dependency; use a sandboxed, scripting-disabled
@@ -178,7 +178,7 @@ export async function printHtmlToPdf(
   html: PrintableHtml,
   createWindow: () => PrintWindow,
 ): Promise<Buffer> {
-  const workDir = await mkdtemp(join(tmpdir(), 'genoffice-ai-doc-'))
+  const workDir = await mkdtemp(join(tmpdir(), 'work-ai-doc-'))
   let printWin: PrintWindow | undefined
   try {
     printWin = createWindow()

@@ -1,4 +1,4 @@
-import { chmodSync, mkdtempSync, writeFileSync } from 'node:fs'
+﻿import { chmodSync, mkdtempSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { runCli, type RunOptions } from '../src/cli'
@@ -26,12 +26,12 @@ export async function run(argv: string[], opts: Omit<RunOptions, 'io'> = {}): Pr
 }
 
 export function tempDir(): string {
-  return mkdtempSync(join(tmpdir(), 'genoffice-test-'))
+  return mkdtempSync(join(tmpdir(), 'work-test-'))
 }
 
-/** A stand-in for the GenOffice binary (GENOFFICE_APP_BIN): copies a prepared PDF to --out and prints the envelope. */
+/** A stand-in for the Work binary (WORK_APP_BIN): copies a prepared PDF to --out and prints the envelope. */
 export function fakeApp(dir: string, pdf: string): string {
-  const fake = join(dir, 'fake-genoffice.sh')
+  const fake = join(dir, 'fake-work.sh')
   writeFileSync(
     fake,
     `#!/bin/sh\nwhile [ $# -gt 0 ]; do if [ "$1" = "--out" ]; then out="$2"; fi; if [ "$1" = "--to" ]; then to="$2"; fi; shift; done\n[ "$to" = "pdf" ] || exit 9\ncp "${pdf}" "$out"\necho '{"status":"ok","summary":"exported"}'\n`,
@@ -43,7 +43,7 @@ export function fakeApp(dir: string, pdf: string): string {
 /** A valid PDF with real Helvetica text, one page per entry; enough for page counting, text reading and conversion. */
 export function writeMinimalPdf(
   path: string,
-  text: string | string[] = 'Hello genoffice',
+  text: string | string[] = 'Hello work',
   info: { title?: string; author?: string } = {},
 ): string {
   const texts = Array.isArray(text) ? text : [text]

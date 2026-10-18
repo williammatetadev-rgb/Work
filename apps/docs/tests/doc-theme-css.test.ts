@@ -1,10 +1,10 @@
-/**
+﻿/**
  * Applying a theme has to change the page, not only the saved file.
  * docThemeCss is generated from live theme state, so the render reflects a pick
  * immediately.
  */
 import { describe, expect, it } from 'vitest'
-import type { ParsedDocFull, StyleDisplay, StyleInfo } from '@genoffice/docx-engine'
+import type { ParsedDocFull, StyleDisplay, StyleInfo } from '@work/docx-engine'
 import { docLineFactor, docStyleCss, docThemeCss } from '../src/renderer/doc-style-css'
 
 describe('docThemeCss', () => {

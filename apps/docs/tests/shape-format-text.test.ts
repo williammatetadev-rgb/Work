@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The Shape Format tab's Text group.
  *
  * Selecting a shape gives the main editor a NodeSelection, not a text selection,
@@ -12,7 +12,7 @@ import { act, createElement } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Editor } from '@tiptap/core'
 import { NodeSelection } from '@tiptap/pm/state'
-import { parseDocx, saveDocx, type TextboxDisplay } from '@genoffice/docx-engine'
+import { parseDocx, saveDocx, type TextboxDisplay } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { Ribbon } from '../src/renderer/components/Ribbon'
 import { computeFormatState } from '../src/renderer/components/ribbon-format-state'

@@ -1,10 +1,10 @@
-/**
+﻿/**
  * Floating shape stacking: the relativeHeight rank orders overlapping floats
  * within the same z bands the image renderer uses (behind < -1 < text < 1 <=
  * front), so a full-page background shape stays under later-ranked text boxes.
  */
 import { describe, expect, it } from 'vitest'
-import type { TextboxDisplay } from '@genoffice/docx-engine'
+import type { TextboxDisplay } from '@work/docx-engine'
 import { DOMSerializer } from '@tiptap/pm/model'
 import { renderTextboxSpec, textboxBoxStyle } from '../src/renderer/editor/protected-render'
 

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdtempSync, readFileSync, realpathSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -42,7 +42,7 @@ test.describe('docs font dialog advanced tab', () => {
   let docPath: string
 
   test.beforeEach(async () => {
-    dir = realpathSync(mkdtempSync(join(tmpdir(), 'genoffice-e2e-font-')))
+    dir = realpathSync(mkdtempSync(join(tmpdir(), 'work-e2e-font-')))
     docPath = join(dir, 'spacing.docx')
     writeFileSync(docPath, await minimalDocx('Spaced'))
   })

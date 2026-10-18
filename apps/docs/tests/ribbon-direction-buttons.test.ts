@@ -1,11 +1,11 @@
-// Word shows the LTR/RTL paragraph buttons only with an RTL editing language;
+﻿// Word shows the LTR/RTL paragraph buttons only with an RTL editing language;
 // here that means an RTL UI language or an RTL paragraph under the selection.
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { act, createElement } from 'react'
 import { createRoot, type Root } from 'react-dom/client'
 import { Editor } from '@tiptap/core'
 import { TextSelection } from '@tiptap/pm/state'
-import type { Lang } from '@genoffice/i18n'
+import type { Lang } from '@work/i18n'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import { computeFormatState } from '../src/renderer/components/ribbon-format-state'
 import { Ribbon } from '../src/renderer/components/Ribbon'

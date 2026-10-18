@@ -1,4 +1,4 @@
-/** Small monochrome SVG icons approximating Word's ribbon glyphs. */
+﻿/** Small monochrome SVG icons approximating Word's ribbon glyphs. */
 
 import type { ReactNode } from 'react'
 
@@ -1882,9 +1882,9 @@ export function IconClose(props: IconProps) {
   )
 }
 
-/** Genspark brand mark (rounded-square sparkle badge), inline so it renders
+/** Work brand mark (rounded-square sparkle badge), inline so it renders
  * crisply at device resolution instead of going through <img> rasterization */
-export function GensparkMark({ size = 30 }: { size?: number }) {
+export function WorkMark({ size = 30 }: { size?: number }) {
   return (
     <svg
       width={size}

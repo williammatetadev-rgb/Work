@@ -1,4 +1,4 @@
-import JSZip from 'jszip'
+﻿import JSZip from 'jszip'
 import { describe, expect, it } from 'vitest'
 import { parseDocx, saveDocx } from '../src/index'
 import { buildDocx } from './helpers/build-docx'
@@ -6,7 +6,7 @@ import { buildDocx } from './helpers/build-docx'
 /**
  * MERGEFIELD: Word resolves the result from a mail-merge data source when the
  * user merges, so an unmerged main document carries no meaningful cached text.
- * GenOffice keeps the field so the template survives a round-trip, and shows the
+ * Work keeps the field so the template survives a round-trip, and shows the
  * guillemet placeholder Word itself uses when nothing is cached yet.
  */
 

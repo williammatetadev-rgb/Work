@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Chromium lays print jobs out at device scale 1, but pagination measured the
  * canvas at the screen's scale, and Blink rounds font ascent/descent to device
  * pixels: a line whose height comes from a taller secondary-font run is up to
@@ -9,7 +9,7 @@
  *
  * The printer job's scale is a whole percent, so its zoom is that percent's
  * exact inverse (1.5 against 67% spills a 0.5% strip onto a blank page), and
- * Windows ignores `scaleFactor` outright (genoffice#1970), so it prints unzoomed.
+ * Windows ignores `scaleFactor` outright (work#1970), so it prints unzoomed.
  */
 
 export type PrintJob = 'pdf' | 'printer'

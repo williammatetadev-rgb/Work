@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest'
+﻿import { afterEach, describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import { executeTool } from '../src/renderer/ai/tools'
@@ -76,7 +76,7 @@ describe('generate_image', () => {
 
   it('surfaces the channel error (not logged in / cloud tools off / generation failure)', async () => {
     const { exec, editor } = await runWithDesktop(
-      { aiGenerateImage: () => Promise.resolve({ error: 'Genspark account is not logged in' }) },
+      { aiGenerateImage: () => Promise.resolve({ error: 'Work account is not logged in' }) },
       { prompt: 'a watercolor fox' },
     )
     expect(exec.isError).toBe(true)

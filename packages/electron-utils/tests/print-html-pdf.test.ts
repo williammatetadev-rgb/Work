@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+﻿import { readFile } from 'node:fs/promises'
 import { existsSync, readdirSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { dirname } from 'node:path'
@@ -95,7 +95,7 @@ describe('printHtmlToPdf', () => {
   })
 
   it('removes the temp dir when the window cannot be created', async () => {
-    const leftovers = () => readdirSync(tmpdir()).filter((d) => d.startsWith('genoffice-ai-doc-'))
+    const leftovers = () => readdirSync(tmpdir()).filter((d) => d.startsWith('work-ai-doc-'))
     const before = leftovers().length
     await expect(
       printHtmlToPdf(buildPrintableHtml('Test', ''), () => {

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * List completion: Set Numbering Value, Adjust List Indents (pending and parsed
  * definitions), picture bullets, CJK number formats, level-to-style links,
  * Change List Level and the line-spacing menu's space before/after toggle.
@@ -17,7 +17,7 @@ import {
   saveDocx,
   type NumberingDef,
   type StyleUpsert,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { blocksToPmDoc, pmDocToSavePlan } from '../src/renderer/editor/convert'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import { EMPTY_PENDING_NUMBERING, type PendingNumbering } from '../src/renderer/doc-state'

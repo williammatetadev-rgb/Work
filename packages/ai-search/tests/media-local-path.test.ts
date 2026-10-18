@@ -1,4 +1,4 @@
-import { mkdtempSync, mkdirSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
+﻿import { mkdtempSync, mkdirSync, rmSync, symlinkSync, writeFileSync } from 'node:fs'
 import { homedir, tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterAll, describe, expect, it } from 'vitest'
@@ -16,8 +16,8 @@ import {
 // own roots. `outside` is deliberately under neither the working tree nor the
 // temp dir (homedir is the one writable place a test may use that is
 // guaranteed to sit outside both), so it exercises the no-roots path.
-const outside = mkdtempSync(join(homedir(), '.genoffice-aisearch-outside-'))
-const inside = mkdtempSync(join(tmpdir(), 'genoffice-aisearch-inside-'))
+const outside = mkdtempSync(join(homedir(), '.work-aisearch-outside-'))
+const inside = mkdtempSync(join(tmpdir(), 'work-aisearch-inside-'))
 const secret = join(outside, 'private.png')
 
 afterAll(() => {
@@ -127,7 +127,7 @@ describe('loadMediaReference with caller-supplied roots', () => {
   })
 
   it('matches whole path segments, not string prefixes', () => {
-    const root = join(tmpdir(), 'genoffice-aisearch-root')
+    const root = join(tmpdir(), 'work-aisearch-root')
     const sibling = `${root}-evil`
     mkdirSync(root, { recursive: true })
     mkdirSync(sibling, { recursive: true })

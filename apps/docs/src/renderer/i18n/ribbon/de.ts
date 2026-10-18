@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const de = {
   ribbonAiCreditNote: 'Ruft KI auf und verbraucht Guthaben',
@@ -191,7 +191,7 @@ export const de = {
   ribbonReplaceTip: 'Text suchen und ersetzen',
   ribbonSelectAll: 'Alles markieren',
   ribbonSelectAllTip: 'Das gesamte Dokument markieren',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: 'KI-Assistenten öffnen',
   ribbonRemoveTableStyleTip: 'Tabellenformatvorlage entfernen',
   ribbonNoStyle: 'Keine Formatvorlage',

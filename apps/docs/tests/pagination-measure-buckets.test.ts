@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { measureBlocks } from '../src/renderer/pagination'
 
 const rectOf = (top: number, height: number, width = 100) =>
@@ -26,7 +26,7 @@ function flowOf(specs: Array<{ top: number; height: number; inner: string; tag?:
   return pm
 }
 
-describe('measureBlocks — whole-flow break scan (genoffice#526 bucketing)', () => {
+describe('measureBlocks — whole-flow break scan (work#526 bucketing)', () => {
   it('a page-type break in a body paragraph forces the next block to a new page', () => {
     const pm = flowOf([
       { top: 0, height: 20, inner: 'one' },

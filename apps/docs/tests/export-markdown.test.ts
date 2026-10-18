@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import { parseHtmlFragment, replaceBlockRange } from '../src/renderer/ai/protocol'
@@ -94,7 +94,7 @@ describe('documentToMarkdown', () => {
       content: '<p></p>',
     })
     const png = 'data:image/png;base64,iVBORw0KGgo='
-    const lazy = 'genoffice-docx-media://abc/word/media/photo%201.jpeg'
+    const lazy = 'work-docx-media://abc/word/media/photo%201.jpeg'
     try {
       editor.commands.setContent({
         type: 'doc',
@@ -153,10 +153,10 @@ describe('documentToMarkdown', () => {
       })
       expect(documentToMarkdown(editor)).toEqual({
         markdown:
-          'see ![](__genoffice_media__/image1.png)\n\n' +
-          '![](__genoffice_media__/image2.jpeg)\n\n' +
-          '![](__genoffice_media__/image1.png)\n\n' +
-          '| tall | cell ![](__genoffice_media__/image1.png) |\n| --- | --- |\n|  | b2 |\n',
+          'see ![](__work_media__/image1.png)\n\n' +
+          '![](__work_media__/image2.jpeg)\n\n' +
+          '![](__work_media__/image1.png)\n\n' +
+          '| tall | cell ![](__work_media__/image1.png) |\n| --- | --- |\n|  | b2 |\n',
         images: [
           { name: 'image1.png', src: png },
           { name: 'image2.jpeg', src: lazy },

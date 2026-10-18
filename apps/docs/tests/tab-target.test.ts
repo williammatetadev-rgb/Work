@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+﻿import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 import { resolveTabTarget, type TabTargetInput } from '../src/renderer/editor/decoration-extensions'
@@ -66,7 +66,7 @@ describe('resolveTabTarget', () => {
   })
 
   // TOC "<tab><tab>Box 1: ...<tab>9" with stops 397/900/8820 and left=360: the
-  // first tab sits 2.5px before the 397 stop; Word still lands on it, GenOffice
+  // first tab sits 2.5px before the 397 stop; Word still lands on it, Work
   // used to skip to 900 and send the next tab to the far leader stop
   it('takes a custom stop closer than the minimum advance and collapses to it', () => {
     const stops: TabTargetInput['stops'] = [

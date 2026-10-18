@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+﻿import { readFile } from 'node:fs/promises'
 import { extname } from 'node:path'
 import { docToText } from './doc'
 import { docxToText } from './docx'
@@ -17,7 +17,7 @@ export interface ParsedFile {
   error?: string
 }
 
-/** No text extraction for images: callers read raw bytes and go multimodal (see @genoffice/ai-provider images support) */
+/** No text extraction for images: callers read raw bytes and go multimodal (see @work/ai-provider images support) */
 const IMAGE_MIMES: Record<string, string> = {
   png: 'image/png',
   jpg: 'image/jpeg',

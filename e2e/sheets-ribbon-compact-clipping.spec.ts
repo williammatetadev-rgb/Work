@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { launchShell, closeAndSaveVideo, waitForPageWithUrl, screenshotPath } from './helpers'
 
 const MAC = process.platform === 'darwin'
@@ -6,7 +6,7 @@ const MAC = process.platform === 'darwin'
 const COMPACT_KEY = MAC ? 'Alt+Meta+KeyK' : 'Control+Alt+KeyK'
 
 /**
- * The compact ribbon must fit what it holds (genoffice#1891, docs parity).
+ * The compact ribbon must fit what it holds (work#1891, docs parity).
  *
  * The sheets band is the `.ribbon[data-ribbon-body]` element — fixed-height
  * with `overflow-y: hidden`, so any control taller than the compact band is

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word-parity shape draw mode: picking a shape in the ribbon gallery arms a
  * crosshair on the document instead of inserting immediately. A single click
  * inserts Word's predefined 1x1 inch shape at the click point; a drag draws a
@@ -7,8 +7,8 @@
  * same floating-object posOffset attrs the move handle uses.
  */
 import type { Editor } from '@tiptap/core'
-import { shapeClipCss } from '@genoffice/ui'
-import { LINE_KINDS } from '@genoffice/docx-engine'
+import { shapeClipCss } from '@work/ui'
+import { LINE_KINDS } from '@work/docx-engine'
 import { isStraightLineKind, shapeBackgroundImage } from './shape-svg'
 
 const EMU_PER_PX = 9525

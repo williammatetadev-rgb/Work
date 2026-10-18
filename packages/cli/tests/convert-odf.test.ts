@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs'
+﻿import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import JSZip from 'jszip'
 import { describe, expect, it } from 'vitest'
@@ -30,7 +30,7 @@ async function entryText(path: string, entry: string): Promise<string> {
   return file ? file.async('string') : ''
 }
 
-describe('genoffice convert ODF import filters', () => {
+describe('work convert ODF import filters', () => {
   it('converts .odt to .docx headlessly', async () => {
     const dir = tempDir()
     const content =

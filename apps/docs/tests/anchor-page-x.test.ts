@@ -1,11 +1,11 @@
-/**
+﻿/**
  * positionH page anchors: the renderer measures the offset from the paper
  * edge (one left margin before the column) and never clamps the picture to
  * the column width; a page-relative Y above the body top lifts a side-wrapped
  * run picture there instead of starting it at the anchor line.
  */
 import { Editor } from '@tiptap/core'
-import { parseDocx } from '@genoffice/docx-engine'
+import { parseDocx } from '@work/docx-engine'
 import { describe, expect, it } from 'vitest'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { blocksToPmDoc } from '../src/renderer/editor/convert'

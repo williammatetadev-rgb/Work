@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdtempSync, realpathSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -60,7 +60,7 @@ test.describe('docs ruler indent and margin handles', () => {
   let docPath: string
 
   test.beforeEach(async () => {
-    dir = realpathSync(mkdtempSync(join(tmpdir(), 'genoffice-e2e-ruler-')))
+    dir = realpathSync(mkdtempSync(join(tmpdir(), 'work-e2e-ruler-')))
     docPath = join(dir, 'ruler.docx')
     writeFileSync(docPath, await minimalDocx())
   })

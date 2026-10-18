@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { execSync } from 'node:child_process'
 import { copyFile, mkdtemp } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
@@ -35,7 +35,7 @@ function cellPoint(origin: { x: number; y: number }, row: number, column: number
 
 test.describe('sheets: Insert → Recommended Charts and Icons', () => {
   test('recommends charts for a time series and inserts an icon', async () => {
-    const scratch = await mkdtemp(join(tmpdir(), 'genoffice-gallery-e2e-'))
+    const scratch = await mkdtemp(join(tmpdir(), 'work-gallery-e2e-'))
     const workbook = join(scratch, 'gallery.xlsx')
     await copyFile(FIXTURE, workbook)
 

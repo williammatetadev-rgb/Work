@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+﻿import React, { useEffect, useRef } from 'react'
 import { IconEnter, IconSend, IconStop } from './icons'
 import { useAiPanelPrefs } from './ai-panel-prefs-store'
 
@@ -47,13 +47,13 @@ export function AiComposer({
   readonly sendLabel: string
   readonly stopLabel: string
   readonly ariaLabel?: string | undefined
-  /** content inside the box above the textarea (attachment chips, …) — Genspark composer style */
+  /** content inside the box above the textarea (attachment chips, …) — Work composer style */
   readonly header?: React.ReactNode
   /** queued-messages strip, rendered above the header while replies run */
   readonly queueStrip?: React.ReactNode
   /** extra controls at the left of the footer (attach button, toggles, …) */
   readonly footerStart?: React.ReactNode
-  /** compact variant: no hint text, icon-only enter/stop button (Genspark composer style) */
+  /** compact variant: no hint text, icon-only enter/stop button (Work composer style) */
   readonly iconOnly?: boolean | undefined
   /** custom art for the icon-only send button (e.g. brand-supplied PNGs); falls back to IconEnter */
   readonly sendIconEnabled?: React.ReactNode

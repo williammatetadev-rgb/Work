@@ -1,5 +1,5 @@
-/**
- * Wrapper around gsk (Genspark CLI, @genspark/cli) — search / image generation /
+﻿/**
+ * Wrapper around gsk (Work CLI, @work/cli) — search / image generation /
  * media analysis / upload / transcription.
  *
  * Execution: the main process spawns the CLI's JS entry with
@@ -26,16 +26,16 @@ import {
   type WebSearchResult,
 } from './shared'
 import {
-  genofficeApiKey,
-  genofficeAuthPath,
+  workApiKey,
+  workAuthPath,
   recoverFromRejectedGskKey,
   reloadGenofficeAuth,
   type GskRecoveryOutcome,
-} from './genoffice-auth'
-// deep import: the package root re-exports Electron-bound modules, and this file also runs in the genoffice CLI
-import { readBodyCapped } from '@genoffice/electron-utils/remote-image'
-import { createStreamWatchdog } from '@genoffice/ai-provider'
-import { fetchWithSsrfGuard } from '@genoffice/electron-utils/safe-remote-url'
+} from './work-auth'
+// deep import: the package root re-exports Electron-bound modules, and this file also runs in the work CLI
+import { readBodyCapped } from '@work/electron-utils/remote-image'
+import { createStreamWatchdog } from '@work/ai-provider'
+import { fetchWithSsrfGuard } from '@work/electron-utils/safe-remote-url'
 
 const SEARCH_TIMEOUT_MS = 60_000
 const GENERATE_TIMEOUT_MS = 600_000
@@ -45,19 +45,19 @@ const MAX_BUFFER = 32 * 1024 * 1024
 
 let cachedEntry: string | null | undefined
 
-/** JS entry of @genspark/cli (null if not found). Can be overridden via GSK_CLI_PATH. */
+/** JS entry of @work/cli (null if not found). Can be overridden via GSK_CLI_PATH. */
 export function resolveGskEntry(): string | null {
   if (process.env.GSK_CLI_PATH) return process.env.GSK_CLI_PATH
   if (cachedEntry !== undefined) return cachedEntry
   try {
     const require = createRequire(import.meta.url)
-    cachedEntry = require.resolve('@genspark/cli/dist/index.js')
+    cachedEntry = require.resolve('@work/cli/dist/index.js')
   } catch {
     // The packaged app has no node_modules; electron-builder extraResources
     // copies the CLI into Resources/gsk/
     const resourcesPath = (process as { resourcesPath?: string }).resourcesPath
     const packed = resourcesPath
-      ? join(resourcesPath, 'gsk', 'node_modules', '@genspark', 'cli', 'dist', 'index.js')
+      ? join(resourcesPath, 'gsk', 'node_modules', '@work', 'cli', 'dist', 'index.js')
       : null
     cachedEntry = packed && existsSync(packed) ? packed : null
   }
@@ -77,7 +77,7 @@ function electronCompatArgs(): string[] {
   if (!process.versions.electron) return []
   if (compatPath === undefined) {
     try {
-      const dir = join(homedir(), '.genoffice', 'bin')
+      const dir = join(homedir(), '.work', 'bin')
       mkdirSync(dir, { recursive: true })
       compatPath = join(dir, 'electron-compat.js')
       writeFileSync(compatPath, 'delete process.versions.electron;\n')
@@ -89,17 +89,17 @@ function electronCompatArgs(): string[] {
 }
 
 /**
- * API key for Genspark LLM proxy / tool_cli auth; '' when not logged in.
- * Priority: GSK_API_KEY env → GenOffice's own key (bills to us via its
+ * API key for Work LLM proxy / tool_cli auth; '' when not logged in.
+ * Priority: GSK_API_KEY env → Work's own key (bills to us via its
  * key_name) → shared gsk CLI login (bills to the Claw bucket).
  */
 export function gskApiKey(): string {
   const env = process.env.GSK_API_KEY
   if (env && !rejectedKeys.has(env)) return env
-  const own = genofficeApiKey()
+  const own = workApiKey()
   if (own && !rejectedKeys.has(own)) return own
   try {
-    const configPath = join(homedir(), '.genspark-tool-cli', 'config.json')
+    const configPath = join(homedir(), '.work-tool-cli', 'config.json')
     if (!existsSync(configPath)) return ''
     const config = JSON.parse(readFileSync(configPath, 'utf-8')) as { api_key?: string }
     const shared = config.api_key ?? ''
@@ -112,7 +112,7 @@ export function gskApiKey(): string {
 // ── Rejected keys (401) ─────────────────────────────────────────────
 
 /**
- * Keys the server answered 401 for (expired / revoked). GenOffice's own key
+ * Keys the server answered 401 for (expired / revoked). Work's own key
  * is also deleted from disk; env and shared gsk CLI keys belong to someone
  * else, so they are only skipped for the rest of this process.
  */
@@ -147,7 +147,7 @@ export function noteGskKeyRejected(
 }
 
 /**
- * For callers that used the gsk key outside this module (the Genspark LLM
+ * For callers that used the gsk key outside this module (the Work LLM
  * proxy chat/stream): when `error` reports a 401, drop the key and start the
  * recovery in the background. Returns whether it was an auth failure.
  */
@@ -185,7 +185,7 @@ export function resetGskRejectedKeys(): void {
 }
 
 /**
- * Fires when the effective gsk key changes on disk — another GenOffice-family
+ * Fires when the effective gsk key changes on disk — another Work-family
  * app re-logging in mints a new key and revokes the one this process holds.
  * Polls by path (watchFile): auth.json is replaced whole, and fs.watch misses
  * events for a moment after it is armed.
@@ -199,7 +199,7 @@ export function watchGskApiKey(onChange: (key: string) => void, intervalMs = 200
     last = key
     onChange(key)
   }
-  const files = [genofficeAuthPath(), join(homedir(), '.genspark-tool-cli', 'config.json')]
+  const files = [workAuthPath(), join(homedir(), '.work-tool-cli', 'config.json')]
   for (const f of files) watchFile(f, { persistent: false, interval: intervalMs }, check)
   return () => {
     for (const f of files) unwatchFile(f, check)
@@ -218,7 +218,7 @@ export function hasGskAuth(): boolean {
 // ── Child-process proxy plumbing ────────────────────────────────────
 
 // The main process's undici dispatcher (see the apps' proxy bootstraps) never
-// reaches child processes: without forwarding they dial genspark.ai directly.
+// reaches child processes: without forwarding they dial work.ai directly.
 export { setGskProxyUrl, gskProxyUrl } from './shared'
 
 /**
@@ -375,7 +375,7 @@ function runGsk(
   passive = false,
 ): Promise<unknown> {
   const entry = resolveGskEntry()
-  if (!entry) return Promise.reject(new Error('@genspark/cli is not installed'))
+  if (!entry) return Promise.reject(new Error('@work/cli is not installed'))
   return withKeyRecovery((key) => runGskOnce(entry, key, args, timeoutMs, signal), {
     allowLogin: !passive,
   })
@@ -562,15 +562,15 @@ export async function gskGenerateImage(
   if (options.imageSize) args.push('--image_size', options.imageSize)
   const raw = await runGsk(args, GENERATE_TIMEOUT_MS, signal)
   const result = parseGskGeneratedImage(raw)
-  // Bare genspark file URLs (/api/files/) return 403; swap for a signed direct link with a token
+  // Bare work file URLs (/api/files/) return 403; swap for a signed direct link with a token
   // so later plain fetch downloads (e.g. insert_web_image) need no auth
   result.url = await gskResolveDownloadUrl(result.url)
   return result
 }
 
 /**
- * Swaps a genspark file wrapper URL for an anonymously downloadable signed direct link (`gsk download`).
- * Non-genspark file URLs are returned as-is; on swap failure the URL is also returned as-is
+ * Swaps a work file wrapper URL for an anonymously downloadable signed direct link (`gsk download`).
+ * Non-work file URLs are returned as-is; on swap failure the URL is also returned as-is
  * (callers handle download failures themselves).
  */
 export async function gskResolveDownloadUrl(url: string): Promise<string> {
@@ -584,14 +584,14 @@ export async function gskResolveDownloadUrl(url: string): Promise<string> {
   }
 }
 
-// ── Cloud single-slide generation (Genspark slide_generate) ─────────
+// ── Cloud single-slide generation (Work slide_generate) ─────────
 
 /**
  * Calls the tool_cli HTTP endpoint directly so structured params
  * (deck_context/images) are sent as JSON rather than through the CLI's
  * string-based argument passing.
  */
-const GSK_TOOL_CLI_BASE = 'https://www.genspark.ai/api/tool_cli'
+const GSK_TOOL_CLI_BASE = 'https://www.work.ai/api/tool_cli'
 const SLIDE_GENERATE_TIMEOUT_MS = 240_000
 
 /**
@@ -643,7 +643,7 @@ async function toolCliPost(
   timeoutMs: number,
   signal?: AbortSignal,
 ): Promise<unknown> {
-  if (!gskApiKey()) throw new Error('Not logged in to Genspark (gsk login)')
+  if (!gskApiKey()) throw new Error('Not logged in to Work (gsk login)')
   return withKeyRecovery((key) => toolCliPostOnce(key, path, body, timeoutMs, signal))
 }
 
@@ -661,11 +661,11 @@ async function toolCliPostOnce(
   return watchdog.guard(async () => {
     const resp = await fetch(`${GSK_TOOL_CLI_BASE}${path}`, {
       method: 'POST',
-      // X-Agent-Type splits GenOffice usage out of the proxy's "Claw" billing bucket
+      // X-Agent-Type splits Work usage out of the proxy's "Claw" billing bucket
       headers: {
         'X-Api-Key': key,
         'Content-Type': 'application/json',
-        'X-Agent-Type': 'genoffice',
+        'X-Agent-Type': 'work',
       },
       body: JSON.stringify(body),
       signal: watchdog.signal,
@@ -788,7 +788,7 @@ export async function gskTranscribe(
   return extractGskText(raw)
 }
 
-// ── Past projects (Genspark web) ────────────────────────────────────
+// ── Past projects (Work web) ────────────────────────────────────
 
 export interface GskPastProject {
   projectId: string
@@ -797,7 +797,7 @@ export interface GskPastProject {
   title: string
   /** creation time, ISO-like string from the API */
   ctime: string
-  /** relative web URL, e.g. '/agents?id=...' — join with https://www.genspark.ai */
+  /** relative web URL, e.g. '/agents?id=...' — join with https://www.work.ai */
   projectUrl: string
 }
 
@@ -856,7 +856,7 @@ export interface GskListPastProjectsOptions {
   signal?: AbortSignal
 }
 
-/** Lists the user's own past Genspark web projects, newest first (`gsk projects`). */
+/** Lists the user's own past Work web projects, newest first (`gsk projects`). */
 export async function gskListPastProjects(
   options: GskListPastProjectsOptions = {},
 ): Promise<GskPastProjectsPage> {

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * settings.xml w:compat <w:adjustLineHeightInTable/> + typed w:docGrid
  * (Word probe 2026-09-02, prod-sas 086 package replicas):
  * - with the flag, table-cell lines snap to the grid with full body semantics —
@@ -12,7 +12,7 @@
  * existing grid line-height expressions then apply unchanged.
  */
 import { describe, expect, it } from 'vitest'
-import { parseDocx } from '@genoffice/docx-engine'
+import { parseDocx } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { docStyleCss } from '../src/renderer/doc-style-css'
 

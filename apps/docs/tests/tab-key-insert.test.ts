@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Tab in a body paragraph inserts a tab character (Word tab-stop), instead of
  * leaving the editor to cycle ribbon buttons (issue 101). List indent and
  * table cell motion keep their existing Tab bindings.
@@ -6,7 +6,7 @@
 import { Editor } from '@tiptap/core'
 import { TextSelection } from '@tiptap/pm/state'
 import { describe, expect, it } from 'vitest'
-import { parseDocx, saveDocx } from '@genoffice/docx-engine'
+import { parseDocx, saveDocx } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { blocksToPmDoc, pmDocToSavePlan } from '../src/renderer/editor/convert'
 import { editorExtensions } from '../src/renderer/editor/extensions'

@@ -1,4 +1,4 @@
-import { fileURLToPath } from 'node:url'
+﻿import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitest/config'
 
 // resolve sibling source packages by path (not via node_modules), so a git
@@ -9,27 +9,27 @@ const local = (rel: string) => fileURLToPath(new URL(rel, import.meta.url))
 export default defineConfig({
   resolve: {
     alias: {
-      '@genoffice/docx-engine/lazy-media': local('../../packages/docx-engine/src/lazy-media.ts'),
-      '@genoffice/docx-engine': local('../../packages/docx-engine/src/index.ts'),
-      '@genoffice/font-metrics': local('../../packages/font-metrics/src/index.ts'),
+      '@work/docx-engine/lazy-media': local('../../packages/docx-engine/src/lazy-media.ts'),
+      '@work/docx-engine': local('../../packages/docx-engine/src/index.ts'),
+      '@work/font-metrics': local('../../packages/font-metrics/src/index.ts'),
       // subpath before the bare name: string aliases are prefix replacements
-      '@genoffice/electron-utils/headless-export': local(
+      '@work/electron-utils/headless-export': local(
         '../../packages/electron-utils/src/headless-export.ts',
       ),
-      '@genoffice/electron-utils/atomic-write': local(
+      '@work/electron-utils/atomic-write': local(
         '../../packages/electron-utils/src/atomic-write.ts',
       ),
-      '@genoffice/electron-utils/safe-external-url': local(
+      '@work/electron-utils/safe-external-url': local(
         '../../packages/electron-utils/src/safe-external-url.ts',
       ),
-      '@genoffice/electron-utils/print-job': local(
+      '@work/electron-utils/print-job': local(
         '../../packages/electron-utils/src/print-job.ts',
       ),
-      '@genoffice/electron-utils': local('../../packages/electron-utils/src/index.ts'),
-      '@genoffice/ai-provider/browser': local('../../packages/ai-provider/src/browser.ts'),
-      '@genoffice/ai-provider': local('../../packages/ai-provider/src/index.ts'),
-      '@genoffice/i18n': local('../../packages/i18n/src/index.ts'),
-      '@genoffice/ui': local('../../packages/ui/src/index.ts'),
+      '@work/electron-utils': local('../../packages/electron-utils/src/index.ts'),
+      '@work/ai-provider/browser': local('../../packages/ai-provider/src/browser.ts'),
+      '@work/ai-provider': local('../../packages/ai-provider/src/index.ts'),
+      '@work/i18n': local('../../packages/i18n/src/index.ts'),
+      '@work/ui': local('../../packages/ui/src/index.ts'),
     },
   },
   test: {

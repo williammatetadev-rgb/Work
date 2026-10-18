@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdtempSync, realpathSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -55,7 +55,7 @@ test.describe('docs contextual ribbon tabs', () => {
   let docPath: string
 
   test.beforeEach(async () => {
-    dir = realpathSync(mkdtempSync(join(tmpdir(), 'genoffice-e2e-ctxtabs-')))
+    dir = realpathSync(mkdtempSync(join(tmpdir(), 'work-e2e-ctxtabs-')))
     docPath = join(dir, 'ctx.docx')
     writeFileSync(docPath, await minimalDocx())
   })

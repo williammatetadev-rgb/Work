@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const pl = {
   appScTitle: 'Skróty klawiaturowe',
@@ -320,13 +320,13 @@ export const pl = {
   appTabBar: 'Paskowy',
   appTabClear: 'Wyczyść',
   appAiSettings: 'Ustawienia AI',
-  appGensparkAccount: 'Konto Genspark',
+  appWorkAccount: 'Konto Work',
   appChecking: 'Sprawdzanie…',
   appLoggedIn: 'Zalogowano',
   appLoggedInEmail: 'Zalogowano: {email}',
-  appNotLoggedIn: 'Nie zalogowano (funkcje AI wymagają konta Genspark)',
+  appNotLoggedIn: 'Nie zalogowano (funkcje AI wymagają konta Work)',
   appWaitingBrowserLogin: 'Oczekiwanie na logowanie w przeglądarce…',
-  appLoginGenspark: 'Zaloguj się do Genspark',
+  appLoginWork: 'Zaloguj się do Work',
   appModel: 'Model',
   appCut: 'Wytnij',
   appCopy: 'Kopiuj',

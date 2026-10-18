@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word's typed line grid (w:docGrid lines/linesAndChars) governs the body flow
  * only: header/footer strip lines keep their natural heights and the reserved
  * push-down probe must not measure grid-snapped strips (prod-sas 003/004 Word
@@ -6,7 +6,7 @@
  * margin while the snapped strip height would have pushed it down a line+).
  */
 import { describe, expect, it } from 'vitest'
-import type { ParsedDocFull } from '@genoffice/docx-engine'
+import type { ParsedDocFull } from '@work/docx-engine'
 import { docStyleCss } from '../src/renderer/doc-style-css'
 
 ;(globalThis as { CSS?: unknown }).CSS ??= { escape: (s: string) => s }

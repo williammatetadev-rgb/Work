@@ -1,4 +1,4 @@
-// Implementation lives in the engine (parse-time TOC numbering reuses it);
+﻿// Implementation lives in the engine (parse-time TOC numbering reuses it);
 // this module keeps the historical import path for the editor.
 export {
   substituteBullet,
@@ -10,4 +10,4 @@ export {
   markerTabAdvance,
   type ListItemRef,
   type ListMarkerInfo,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'

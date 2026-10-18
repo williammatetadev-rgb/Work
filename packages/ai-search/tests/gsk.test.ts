@@ -1,4 +1,4 @@
-import { describe, it, expect, afterEach, vi } from 'vitest'
+﻿import { describe, it, expect, afterEach, vi } from 'vitest'
 import {
   gskChildEnv,
   setGskProxyUrl,
@@ -14,8 +14,8 @@ import {
   MAX_TOOL_CLI_NDJSON_BYTES,
   summarizeGskFailure,
 } from '../src/gsk'
-import { ResponseTooLargeError } from '@genoffice/electron-utils/remote-image'
-import { AiTimeoutError } from '@genoffice/ai-provider'
+import { ResponseTooLargeError } from '@work/electron-utils/remote-image'
+import { AiTimeoutError } from '@work/ai-provider'
 
 describe('parseGskOutput', () => {
   it('parses clean JSON', () => {
@@ -226,7 +226,7 @@ describe('parseGskImageSearch', () => {
       status: 'ok',
       data: [
         {
-          image_url: 'https://sspark.genspark.ai/img1',
+          image_url: 'https://sspark.work.ai/img1',
           title: 'T1',
           source: 'Site',
           link: 'https://site.com/page',
@@ -239,7 +239,7 @@ describe('parseGskImageSearch', () => {
     expect(images).toEqual([
       {
         title: 'T1',
-        imageUrl: 'https://sspark.genspark.ai/img1',
+        imageUrl: 'https://sspark.work.ai/img1',
         sourceUrl: 'https://site.com/page',
         source: 'Site',
         width: 1000,
@@ -410,7 +410,7 @@ describe('gskSlideGenerate response caps', () => {
   const originalApiKey = process.env.GSK_API_KEY
   const slideResult = JSON.stringify({
     status: 'ok',
-    data: { pptx_url: 'https://www.genspark.ai/api/files/deck.pptx', model: 'claude-opus-4-7' },
+    data: { pptx_url: 'https://www.work.ai/api/files/deck.pptx', model: 'claude-opus-4-7' },
   })
   // a public address literal, so the download path needs no DNS in tests
   const downloadResult = JSON.stringify({
@@ -574,11 +574,11 @@ describe('parseToolCliNdjson', () => {
 })
 
 describe('summarizeGskFailure', () => {
-  // trimmed version of the gateway page Genspark serves for refused calls
+  // trimmed version of the gateway page Work serves for refused calls
   const HTML_403 = `<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Genspark</title>
+    <title>Work</title>
   </head>
   <body>
     <div class="tt">Service unavailable. Please check your internet connection.</div>

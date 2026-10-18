@@ -1,10 +1,10 @@
-/**
+﻿/**
  * Static protected DOM (read-only tables / textboxes) gets the same
  * .doc-autospace-pad spans the editor adds via decorations.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { DOMSerializer } from '@tiptap/pm/model'
-import type { TableModel, TextboxDisplay } from '@genoffice/docx-engine'
+import type { TableModel, TextboxDisplay } from '@work/docx-engine'
 import { renderTableSpec, renderTextboxSpec } from '../src/renderer/editor/protected-render'
 import { setHangulSpaceWidening } from '../src/renderer/line-metrics'
 

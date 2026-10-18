@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const ar = {
   ribbonAiCreditNote: 'يستدعي الذكاء الاصطناعي ويستهلك الرصيد',
@@ -189,7 +189,7 @@ export const ar = {
   ribbonReplaceTip: 'البحث عن نص واستبداله',
   ribbonSelectAll: 'تحديد الكل',
   ribbonSelectAllTip: 'تحديد المستند بالكامل',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: 'فتح مساعد الذكاء الاصطناعي',
   ribbonRemoveTableStyleTip: 'إزالة نمط الجدول',
   ribbonNoStyle: 'بلا نمط',

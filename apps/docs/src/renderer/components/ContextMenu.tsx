@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+﻿import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Editor } from '@tiptap/core'
 import type { Command } from '@tiptap/pm/state'
 import { NodeSelection, TextSelection } from '@tiptap/pm/state'
@@ -13,9 +13,9 @@ import {
   mergeCells,
   splitCell,
 } from '@tiptap/pm/tables'
-import { platformShortcuts } from '@genoffice/i18n'
+import { platformShortcuts } from '@work/i18n'
 import { redactTextBetween, type RedactableNode } from '../ai/redact-view'
-import type { TextboxDisplay } from '@genoffice/docx-engine'
+import type { TextboxDisplay } from '@work/docx-engine'
 
 import { useI18n, type StringKey } from '../i18n/locale'
 import { wordRangeAtCaret } from '../editor/comments'

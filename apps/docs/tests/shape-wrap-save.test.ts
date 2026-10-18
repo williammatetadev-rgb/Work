@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shape Format wrap and stacking persist through save: a loaded shape has its
  * original drawing bytes patched in place (position preserved), an inserted
  * shape has its generated anchor rewritten.
@@ -12,7 +12,7 @@ import {
   parseDocx,
   saveDocx,
   type TextboxDisplay,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { insertShapeAt } from '../src/renderer/components/ribbon-tabs'
 import { blocksToPmDoc, pmDocToSavePlan, type PmNode } from '../src/renderer/editor/convert'

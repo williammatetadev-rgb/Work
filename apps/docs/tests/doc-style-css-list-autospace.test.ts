@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word zeroes HTML auto spacing (beforeAutospacing/afterAutospacing) only
  * between adjacent items of the same list definition: same abstractNum, any
  * ilvl, numIds sharing the abstractNum included; a different list keeps the
@@ -7,7 +7,7 @@
  */
 import { describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
-import type { NumberingDef, ParsedDocFull } from '@genoffice/docx-engine'
+import type { NumberingDef, ParsedDocFull } from '@work/docx-engine'
 import { docStyleCss } from '../src/renderer/doc-style-css'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 

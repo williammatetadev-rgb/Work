@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 
-import { isSymbolFontFamily } from '@genoffice/ui'
+import { isSymbolFontFamily } from '@work/ui'
 
 describe('isSymbolFontFamily (font pickers show symbol-font names in the UI font)', () => {
   it('flags the classic symbol-encoded families', () => {

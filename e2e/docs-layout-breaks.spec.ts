@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdtempSync, readFileSync, realpathSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -47,7 +47,7 @@ test.describe('docs layout breaks menu', () => {
   let docPath: string
 
   test.beforeEach(async () => {
-    dir = realpathSync(mkdtempSync(join(tmpdir(), 'genoffice-e2e-breaks-')))
+    dir = realpathSync(mkdtempSync(join(tmpdir(), 'work-e2e-breaks-')))
     docPath = join(dir, 'breaks.docx')
     writeFileSync(docPath, await minimalDocx())
   })

@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const pt = {
   appScTitle: 'Atalhos de Teclado',
@@ -316,13 +316,13 @@ export const pt = {
   appTabBar: 'Barra',
   appTabClear: 'Limpar',
   appAiSettings: 'Configurações de IA',
-  appGensparkAccount: 'Conta Genspark',
+  appWorkAccount: 'Conta Work',
   appChecking: 'Verificando…',
   appLoggedIn: 'Conectado',
   appLoggedInEmail: 'Conectado: {email}',
-  appNotLoggedIn: 'Não conectado (os recursos de IA exigem uma conta Genspark)',
+  appNotLoggedIn: 'Não conectado (os recursos de IA exigem uma conta Work)',
   appWaitingBrowserLogin: 'Aguardando login no navegador…',
-  appLoginGenspark: 'Entrar no Genspark',
+  appLoginWork: 'Entrar no Work',
   appModel: 'Modelo',
   appCut: 'Recortar',
   appCopy: 'Copiar',

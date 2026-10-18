@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Plain-text view of a header/footer part, shared by the on-canvas editing
  * surface and the AI set_header_footer tool: paragraphs edit as lines, the
  * invisible PAGE / NUMPAGES field sentinels as visible {PAGE} / {NUMPAGES}
@@ -12,7 +12,7 @@ import {
   type HfImage,
   type HfParagraph,
   type Run,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 
 export const PAGE_TOKEN = '{PAGE}'
 export const TOTAL_TOKEN = '{NUMPAGES}'

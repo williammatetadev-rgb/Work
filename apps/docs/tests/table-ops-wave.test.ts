@@ -1,9 +1,9 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
+﻿import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Editor } from '@tiptap/core'
 import { TextSelection, type Command } from '@tiptap/pm/state'
 import { CellSelection, TableMap, mergeCells } from '@tiptap/pm/tables'
 import type { Node as PmNode } from '@tiptap/pm/model'
-import { parseDocx } from '@genoffice/docx-engine'
+import { parseDocx } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import {

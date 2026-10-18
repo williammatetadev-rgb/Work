@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test'
+﻿import { test, expect, type Page } from '@playwright/test'
 import { mkdtempSync, realpathSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -116,7 +116,7 @@ test.describe('docs selection bar and format painter', () => {
   let docPath: string
 
   test.beforeEach(async () => {
-    dir = realpathSync(mkdtempSync(join(tmpdir(), 'genoffice-e2e-selbar-')))
+    dir = realpathSync(mkdtempSync(join(tmpdir(), 'work-e2e-selbar-')))
     docPath = join(dir, 'selbar.docx')
     writeFileSync(docPath, await minimalDocx(PARAS))
   })

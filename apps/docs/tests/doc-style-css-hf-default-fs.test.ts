@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Header/footer strip default font size: Word's Header/Footer styles are based
  * on Normal, so unstyled strip runs take the document default size, both below
  * and above the static 10.5pt guess (a 12pt-default header wraps its long line
  * where Word does).
  */
 import { describe, expect, it } from 'vitest'
-import type { ParsedDocFull, StyleDisplay, StyleInfo } from '@genoffice/docx-engine'
+import type { ParsedDocFull, StyleDisplay, StyleInfo } from '@work/docx-engine'
 import { docStyleCss } from '../src/renderer/doc-style-css'
 
 ;(globalThis as { CSS?: unknown }).CSS ??= { escape: (s: string) => s }

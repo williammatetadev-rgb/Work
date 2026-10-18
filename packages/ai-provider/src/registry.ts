@@ -1,4 +1,4 @@
-import { ANTHROPIC_BASE_URL } from './protocols/anthropic'
+﻿import { ANTHROPIC_BASE_URL } from './protocols/anthropic'
 import { GEMINI_BASE_URL } from './protocols/gemini'
 import { AI_PROVIDERS, DEEPSEEK_V41_FLASH, GENSPARK_LLM_BASE_URLS } from './providers'
 import {
@@ -120,8 +120,8 @@ function fixedEndpoint(
 }
 
 export const AI_PROVIDER_ADAPTERS: Record<AiProviderId, ProviderAdapter> = {
-  genspark: {
-    meta: metaOf('genspark'),
+  work: {
+    meta: metaOf('work'),
     capabilities: { auth: 'gsk-login', vision: true },
     // Route by model id prefix: claude uses the Anthropic protocol (preserves image
     // input fidelity), the rest OpenAI-compatible. The proxy's gemini endpoint was
@@ -170,7 +170,7 @@ export const AI_PROVIDER_ADAPTERS: Record<AiProviderId, ProviderAdapter> = {
     meta: metaOf('openai'),
     capabilities: { auth: 'api-key', vision: true },
     // every current OpenAI model accepts the renamed field, so it is safe endpoint-wide;
-    // other openai-compatible vendors (and the LiteLLM-backed Genspark proxy) still expect `max_tokens`
+    // other openai-compatible vendors (and the LiteLLM-backed Work proxy) still expect `max_tokens`
     resolveEndpoint: fixedEndpoint('openai-compatible', 'https://api.openai.com/v1', {
       useMaxCompletionTokens: true,
     }),

@@ -1,12 +1,12 @@
-/**
+﻿/**
  * Typed line grid and in-line objects: Word lays a picture or chart line over
  * whole grid cells with the object centred (a 279pt chart on an 18pt grid holds
  * 288pt), and a raised or lowered run never lifts its line. The render paths
  * expose the object height as --doc-obj-h; docStyleCss turns it into padding.
  */
 import { Editor } from '@tiptap/core'
-import { parseDocx } from '@genoffice/docx-engine'
-import type { ParsedDocFull } from '@genoffice/docx-engine'
+import { parseDocx } from '@work/docx-engine'
+import type { ParsedDocFull } from '@work/docx-engine'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
   buildDocx,

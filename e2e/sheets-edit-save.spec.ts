@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { execSync } from 'node:child_process'
 import { copyFile, mkdtemp } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
@@ -45,7 +45,7 @@ function sheetXml(workbookPath: string): string {
 
 test.describe('sheets: edit and save an external workbook', () => {
   test('cell edit round-trips through save and reopen', async () => {
-    const scratch = await mkdtemp(join(tmpdir(), 'genoffice-sheets-e2e-'))
+    const scratch = await mkdtemp(join(tmpdir(), 'work-sheets-e2e-'))
     const workbook = join(scratch, 'edit-save.xlsx')
     await copyFile(FIXTURE, workbook)
 

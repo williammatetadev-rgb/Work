@@ -1,10 +1,10 @@
-import {
+﻿import {
   applySectionStartType,
   sectionFromSectPr,
   type SaveBlock,
   type SaveOptions,
   type SectionInfo,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import type { OpenDocument } from './docx'
 
 import type {

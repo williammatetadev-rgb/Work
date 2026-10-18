@@ -1,4 +1,4 @@
-/**
+﻿/**
  * List numbering actions: allocating numIds, new list definitions, restart /
  * continue numbering. Extracted from App.tsx; the App component passes a
  * NumberingContext built fresh per call so state never goes stale.
@@ -13,7 +13,7 @@ import {
   type ListItemRef,
   type NumberingDef,
   type NumberingLevel,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import type { DocState, PendingNumbering } from './doc-state'
 import { t } from './i18n/locale'
 

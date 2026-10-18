@@ -1,4 +1,4 @@
-/**
+﻿/**
  * In Electron main processes AI requests run on Node's fetch (undici), which
  * connects directly instead of going through Chromium's network stack. Under
  * VPN/tun setups those direct connections can get reset (ECONNRESET) while
@@ -22,7 +22,7 @@ export function setRescueFetch(fn: FetchLike | null): void {
  * clients to identify themselves and flags "broad" user agents). Main
  * processes refine the default with the app version.
  */
-export const AI_DEFAULT_USER_AGENT = 'GenOffice'
+export const AI_DEFAULT_USER_AGENT = 'Work'
 
 let userAgent = AI_DEFAULT_USER_AGENT
 

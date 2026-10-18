@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync, readFileSync } from 'node:fs'
+﻿import { copyFileSync, existsSync, readFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { Client } from '@modelcontextprotocol/sdk/client/index.js'
 import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js'
@@ -132,7 +132,7 @@ describe('mcp server', () => {
     dir = tempDir()
     ctx = createContext({
       cwd: dir,
-      env: { ...process.env, GENOFFICE_AUDIT_LOG: 'off' },
+      env: { ...process.env, WORK_AUDIT_LOG: 'off' },
       log: () => {},
     })
     const server = await createMcpServer(ctx, { registry })
@@ -336,7 +336,7 @@ describe('mcp server', () => {
   it('falls back to untyped arrays with compactSchemas', async () => {
     const ctx2 = createContext({
       cwd: dir,
-      env: { ...process.env, GENOFFICE_AUDIT_LOG: 'off' },
+      env: { ...process.env, WORK_AUDIT_LOG: 'off' },
       log: () => {},
     })
     const server = await createMcpServer(ctx2, { registry, compactSchemas: true })
@@ -389,12 +389,12 @@ describe('mcp server', () => {
     const first = (before.json().detail.items[0].text as string).split(' ')[0]!
     const r = await call('docs_apply', {
       file: copy,
-      ops: [{ op: 'findReplace', find: first, replace: 'GENOFFICE' }],
+      ops: [{ op: 'findReplace', find: first, replace: 'WORK' }],
     })
     expect(r.isError).toBe(false)
     expect(r.json()).toMatchObject({ status: 'ok', command: 'docs', output_path: copy })
     const after = await call('docs_read', { file: copy, range: '0', full: true })
-    expect(after.json().detail.items[0].text).toContain('GENOFFICE')
+    expect(after.json().detail.items[0].text).toContain('WORK')
   })
 
   it('spells out the lost ops ahead of a partial batch envelope, without isError', async () => {
@@ -444,8 +444,8 @@ describe('mcp server', () => {
     expect(r.text).toContain('Word ops')
     expect(() => r.json()).toThrow()
     const { resources } = await client.listResources()
-    expect(resources.map((x) => x.uri)).toContain('genoffice://guide/slides/spec')
-    const spec = await client.readResource({ uri: 'genoffice://guide/slides/spec' })
+    expect(resources.map((x) => x.uri)).toContain('work://guide/slides/spec')
+    const spec = await client.readResource({ uri: 'work://guide/slides/spec' })
     expect((spec.contents[0] as { text: string }).text.length).toBeGreaterThan(200)
   })
 
@@ -564,11 +564,11 @@ describe('mcp server', () => {
     expect(readFileSync(join(deck, 'pages', '02.json'), 'utf-8')).toContain('Thanks')
   })
 
-  it('keeps the deck tools inside GENOFFICE_ALLOWED_ROOTS', async () => {
+  it('keeps the deck tools inside WORK_ALLOWED_ROOTS', async () => {
     const inside = join(dir, 'roots')
     const ctx2 = createContext({
       cwd: dir,
-      env: { ...process.env, GENOFFICE_AUDIT_LOG: 'off', GENOFFICE_ALLOWED_ROOTS: inside },
+      env: { ...process.env, WORK_AUDIT_LOG: 'off', WORK_ALLOWED_ROOTS: inside },
       log: () => {},
     })
     const server = await createMcpServer(ctx2, { registry })

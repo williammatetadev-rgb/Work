@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word's Simple Markup review view: a document carrying tracked changes opens
  * with final text (deletions hidden, insertions plain), a red changed-line bar
  * in the left margin for every changed line and a balloon glyph per comment in
@@ -69,7 +69,7 @@ test.describe('docs Simple Markup view', () => {
   let docPath: string
 
   test.beforeEach(async () => {
-    dir = realpathSync(mkdtempSync(join(tmpdir(), 'genoffice-e2e-simple-markup-')))
+    dir = realpathSync(mkdtempSync(join(tmpdir(), 'work-e2e-simple-markup-')))
     docPath = join(dir, 'tracked.docx')
     writeFileSync(docPath, await trackedDocx())
   })

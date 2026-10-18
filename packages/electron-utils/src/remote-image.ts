@@ -1,6 +1,6 @@
-/// Downloader for AI-inserted images. Image-search results largely live on the
-/// Genspark CDN (sspark.genspark.ai), which intermittently refuses bare
-/// requests; browser-like headers plus a Referer on genspark hosts and a couple
+﻿/// Downloader for AI-inserted images. Image-search results largely live on the
+/// Work CDN (sspark.work.ai), which intermittently refuses bare
+/// requests; browser-like headers plus a Referer on work hosts and a couple
 /// of retries turn most of those transient failures into successful inserts.
 
 import { readGeneratedImage } from './generated-images'
@@ -74,8 +74,8 @@ export function remoteImageHeaders(rawUrl: string): Record<string, string> {
   }
   try {
     const host = new URL(rawUrl).hostname.toLowerCase()
-    if (host === 'genspark.ai' || host.endsWith('.genspark.ai')) {
-      headers.Referer = 'https://www.genspark.ai/'
+    if (host === 'work.ai' || host.endsWith('.work.ai')) {
+      headers.Referer = 'https://www.work.ai/'
     }
   } catch {
     /* fetchWithSsrfGuard rejects unparseable URLs on its own */
@@ -85,7 +85,7 @@ export function remoteImageHeaders(rawUrl: string): Record<string, string> {
 
 /**
  * fetchWithSsrfGuard specialized for image downloads: browser-like headers
- * (with a Referer for the Genspark CDN) and retries on transient failures
+ * (with a Referer for the Work CDN) and retries on transient failures
  * (network errors, 403/408/429, 5xx). An SSRF-blocked URL still returns null
  * immediately — that outcome never changes on retry.
  */

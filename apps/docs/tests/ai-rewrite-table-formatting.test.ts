@@ -1,11 +1,11 @@
-import { afterEach, describe, expect, it } from 'vitest'
+﻿import { afterEach, describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
 import {
   BLANK_BULLET_NUM_ID,
   BLANK_ORDERED_NUM_ID,
   parseDocx,
   saveDocx,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { blocksToPmDoc, pmDocToSavePlan, type PmNode } from '../src/renderer/editor/convert'
 import { editorExtensions } from '../src/renderer/editor/extensions'

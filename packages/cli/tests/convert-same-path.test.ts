@@ -1,4 +1,4 @@
-import { mkdtempSync, realpathSync, symlinkSync, writeFileSync } from 'node:fs'
+﻿import { mkdtempSync, realpathSync, symlinkSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
@@ -7,7 +7,7 @@ import { convertCommand } from '../src/commands/convert'
 import { EXIT } from '../src/result'
 
 const run = async (argv: string[], cwd: string) => {
-  const ctx = { cwd, env: { ...process.env, GENOFFICE_ALLOWED_ROOTS: '' }, log: () => {} }
+  const ctx = { cwd, env: { ...process.env, WORK_ALLOWED_ROOTS: '' }, log: () => {} }
   try {
     await convertCommand.run(parseArgs(argv, new Set(['force'])), ctx as never)
   } catch (e) {
@@ -18,7 +18,7 @@ const run = async (argv: string[], cwd: string) => {
 
 describe('convert refuses to write over its own input', () => {
   it('rejects --out equal to the input even with --force, also through a symlink', async () => {
-    const dir = realpathSync(mkdtempSync(join(tmpdir(), 'genoffice-convert-')))
+    const dir = realpathSync(mkdtempSync(join(tmpdir(), 'work-convert-')))
     writeFileSync(join(dir, 'notes.md'), '# hi')
     symlinkSync(join(dir, 'notes.md'), join(dir, 'alias.md'))
     const direct = await run(['notes.md', '--to', 'html', '--out', 'notes.md', '--force'], dir)

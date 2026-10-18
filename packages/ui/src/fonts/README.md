@@ -1,4 +1,4 @@
-# Shared bundled fonts
+﻿# Shared bundled fonts
 
 Font files that more than one app ships. Each app used to carry its own copy;
 keeping a single set here means one download per package, one licence record,
@@ -18,9 +18,9 @@ Reference the files through the package export, from CSS or from a main-process
 asset import:
 
 ```css
-src: url('@genoffice/ui/fonts/Carlito-Regular.ttf');
+src: url('@work/ui/fonts/Carlito-Regular.ttf');
 ```
 
 ```ts
-import carlitoRegular from '@genoffice/ui/fonts/Carlito-Regular.ttf?asset'
+import carlitoRegular from '@work/ui/fonts/Carlito-Regular.ttf?asset'
 ```

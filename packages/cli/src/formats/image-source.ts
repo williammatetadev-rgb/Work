@@ -1,11 +1,11 @@
-import { existsSync, readFileSync } from 'node:fs'
+﻿import { existsSync, readFileSync } from 'node:fs'
 import { extname, isAbsolute, resolve } from 'node:path'
 import {
   MAX_REMOTE_IMAGE_BYTES,
   ResponseTooLargeError,
   fetchRemoteImage,
   readBodyCapped,
-} from '@genoffice/electron-utils/remote-image'
+} from '@work/electron-utils/remote-image'
 import { assertAllowed, type PathContext } from '../fs'
 import { imageSize } from './image-size'
 
@@ -16,7 +16,7 @@ export interface ImageSource {
 }
 
 /**
- * Image bytes for a spec or op field: a data: URL, an http(s) URL genoffice
+ * Image bytes for a spec or op field: a data: URL, an http(s) URL work
  * downloads, or a local path (absolute, else relative to the current directory
  * and then to the file the reference came from).
  */

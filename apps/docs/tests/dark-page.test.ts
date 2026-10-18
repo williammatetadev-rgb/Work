@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word-style dark page: authored document colors get a remapped `--dk-*` twin
  * next to the untouched authored declaration, and the generated document
  * stylesheet gets screen-only `.page-dark` twins of its color rules. The
@@ -14,7 +14,7 @@ import type {
   StyleDisplay,
   StyleInfo,
   TableStyleDisplay,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import {
   DARK_PAPER_HEX,
   darkPageBorderCss,

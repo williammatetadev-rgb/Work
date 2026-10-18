@@ -1,4 +1,4 @@
-import { mkdtempSync } from 'node:fs'
+﻿import { mkdtempSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
@@ -19,7 +19,7 @@ describe('mcp http session cap', () => {
       host: '127.0.0.1',
       token: TOKEN,
       cwd: mkdtempSync(join(tmpdir(), 'mcp-cap-')),
-      env: { ...process.env, GENOFFICE_AUDIT_LOG: 'off', GENOFFICE_ALLOWED_ROOTS: '' },
+      env: { ...process.env, WORK_AUDIT_LOG: 'off', WORK_ALLOWED_ROOTS: '' },
       log: () => {},
     })
   })

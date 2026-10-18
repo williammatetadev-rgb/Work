@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Classifies capacity/rate-limit failures (HTTP 429/503/529, gateway
  * "engine overloaded" notices, provider rate limits…) so the apps can show a
  * localized "the AI service is busy, try again shortly" message (errorCode
@@ -19,7 +19,7 @@ const OVERLOADED_PATTERN = new RegExp(
   'i',
 )
 
-// Credits-exhausted notices ("Your Genspark credits have been exhausted…") are
+// Credits-exhausted notices ("Your Work credits have been exhausted…") are
 // a different failure class (errorCode 'credits', "top up" message) — never
 // misreport them as a transient capacity problem.
 const CREDITS_PATTERN = /credit|pricing/i

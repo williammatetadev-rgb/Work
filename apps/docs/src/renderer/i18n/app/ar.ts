@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const ar = {
   appScTitle: 'اختصارات لوحة المفاتيح',
@@ -310,13 +310,13 @@ export const ar = {
   appTabBar: 'شريط',
   appTabClear: 'مسح',
   appAiSettings: 'إعدادات الذكاء الاصطناعي',
-  appGensparkAccount: 'حساب Genspark',
+  appWorkAccount: 'حساب Work',
   appChecking: 'جارٍ التحقق…',
   appLoggedIn: 'تم تسجيل الدخول',
   appLoggedInEmail: 'تم تسجيل الدخول: {email}',
-  appNotLoggedIn: 'لم يتم تسجيل الدخول (تتطلب ميزات الذكاء الاصطناعي حساب Genspark)',
+  appNotLoggedIn: 'لم يتم تسجيل الدخول (تتطلب ميزات الذكاء الاصطناعي حساب Work)',
   appWaitingBrowserLogin: 'في انتظار تسجيل الدخول عبر المتصفح…',
-  appLoginGenspark: 'تسجيل الدخول إلى Genspark',
+  appLoginWork: 'تسجيل الدخول إلى Work',
   appModel: 'النموذج',
   appCut: 'قص',
   appCopy: 'نسخ',

@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import type { MindMapTreeNode } from '@genoffice/agent-core'
+﻿import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import type { MindMapTreeNode } from '@work/agent-core'
 import {
   countMindMapNodes,
   layoutMindMap,

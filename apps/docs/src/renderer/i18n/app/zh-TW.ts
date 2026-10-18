@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const zhTW = {
   appScTitle: '鍵盤快速鍵',
@@ -303,13 +303,13 @@ export const zhTW = {
   appTabBar: '分隔線',
   appTabClear: '清除',
   appAiSettings: 'AI 設定',
-  appGensparkAccount: 'Genspark 帳號',
+  appWorkAccount: 'Work 帳號',
   appChecking: '檢查中…',
   appLoggedIn: '已登入',
   appLoggedInEmail: '已登入：{email}',
-  appNotLoggedIn: '未登入（AI 功能需要登入 Genspark 帳號）',
+  appNotLoggedIn: '未登入（AI 功能需要登入 Work 帳號）',
   appWaitingBrowserLogin: '等待瀏覽器登入…',
-  appLoginGenspark: '登入 Genspark',
+  appLoginWork: '登入 Work',
   appModel: '模型',
   appCut: '剪下',
   appCopy: '複製',

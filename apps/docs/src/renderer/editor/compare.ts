@@ -1,9 +1,9 @@
-/**
+﻿/**
  * Review → Compare: paragraph-level diff of two documents (pure, unit-testable).
  * Word builds a merged revision document; this lightweight version reports
  * per-paragraph additions / removals / edits for a side panel.
  */
-import type { Block } from '@genoffice/docx-engine'
+import type { Block } from '@work/docx-engine'
 import { inlineToRuns, type PmNode } from './convert'
 
 export interface CompareEntry {

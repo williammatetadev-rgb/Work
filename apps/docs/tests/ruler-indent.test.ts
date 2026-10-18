@@ -1,8 +1,8 @@
-import { act, createElement } from 'react'
+﻿import { act, createElement } from 'react'
 import { createRoot, type Root } from 'react-dom/client'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { Editor } from '@tiptap/core'
-import type { SectionSettings } from '@genoffice/docx-engine'
+import type { SectionSettings } from '@work/docx-engine'
 import {
   Ruler,
   applyIndentDrag,

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The header/footer model every consumer shares (canvas strips, page gaps,
  * pagination heights, print preview, the AI tool, the save path).
  *
@@ -12,7 +12,7 @@
  * Sections referencing the same parsed part show one another's pending edit,
  * since the save rewrites that shared part. No section is special-cased.
  */
-import type { HeaderFooter, HfImage, HfPartInfo, SectionInfo } from '@genoffice/docx-engine'
+import type { HeaderFooter, HfImage, HfPartInfo, SectionInfo } from '@work/docx-engine'
 import { hfFromPart, type HfVariantKey, type HfVariantsState, type HfView } from './doc-state'
 
 export type HfKind = 'header' | 'footer'

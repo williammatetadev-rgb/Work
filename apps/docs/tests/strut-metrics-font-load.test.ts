@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The strut alias takes the EA chain's canvas metrics. A bundled web face
  * that leads the chain but has not loaded yet makes canvas measure the next
  * installed family, so the result must not be cached and the face must be
@@ -12,7 +12,7 @@ import {
 } from '../src/renderer/line-metrics'
 
 const KR_CHAIN =
-  '"맑은 고딕", "Malgun Gothic", "GenOffice Sans KR", "Apple SD Gothic Neo", sans-serif'
+  '"맑은 고딕", "Malgun Gothic", "Work Sans KR", "Apple SD Gothic Neo", sans-serif'
 
 function stubFonts(loaded: Set<string>) {
   const load = vi.fn((spec: string) => {
@@ -47,11 +47,11 @@ describe('unloadedBundledPrimary', () => {
   it('names the bundled face that leads a chain of missing families until it loads', () => {
     stubFonts(new Set())
     stubCanvas({ ascent: 900, descent: 300 })
-    expect(unloadedBundledPrimary(KR_CHAIN)).toBe('GenOffice Sans KR')
+    expect(unloadedBundledPrimary(KR_CHAIN)).toBe('Work Sans KR')
   })
 
   it('null once the face is loaded, for generic-only chains and without FontFaceSet', () => {
-    stubFonts(new Set(['GenOffice Sans KR']))
+    stubFonts(new Set(['Work Sans KR']))
     expect(unloadedBundledPrimary(KR_CHAIN)).toBeNull()
     expect(unloadedBundledPrimary('serif')).toBeNull()
     Reflect.deleteProperty(document, 'fonts')
@@ -67,7 +67,7 @@ describe('fontChainMetricsPct with a pending bundled face', () => {
     stubCanvas(metrics)
     const chain = `${KR_CHAIN}, "probe-a"`
     expect(fontChainMetricsPct(chain)).toEqual({ ascentPct: 90, descentPct: 30 })
-    expect(load).toHaveBeenCalledWith('16px "GenOffice Sans KR"')
+    expect(load).toHaveBeenCalledWith('16px "Work Sans KR"')
     // the stub resolves the load synchronously: the face is in now
     expect(takeSettledMetricFaces()).toBe(true)
     expect(takeSettledMetricFaces()).toBe(false)

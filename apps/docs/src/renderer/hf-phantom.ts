@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Page color (w:background) makes Word lay out one extra empty paragraph in
  * the default paragraph style after the header content of section 1 (every
  * variant) and of later sections inheriting it; never footers, never a section
@@ -17,7 +17,7 @@ import {
   type HfParagraph,
   type StyleDisplay,
   type StyleInfo,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { hfParasOf } from './editor/hf-text'
 import type { HfKind, HfResolved } from './hf-sections'
 

@@ -1,35 +1,35 @@
-import { normalizeCustomProfile } from './custom-profile'
+﻿import { normalizeCustomProfile } from './custom-profile'
 import { resolveCustomEndpoints } from './custom-endpoints'
 import { defaultAiMediaSettings, resolveAiMediaSettings } from './media'
 import { defaultAiSearchSettings, resolveAiSearchSettings } from './search-settings'
 import type { AiProviderId, AiProviderMeta, AiSettings, LegacyAiSettings } from './types'
 
 /**
- * Genspark server-side LLM proxy endpoints. All three protocols share the
+ * Work server-side LLM proxy endpoints. All three protocols share the
  * api_key from the gsk login; model ids follow the proxy's own naming scheme,
  * which differs from the official vendor ids.
  */
 export const GENSPARK_LLM_BASE_URLS = {
-  anthropic: 'https://www.genspark.ai/api/anthropic',
-  openai: 'https://www.genspark.ai/api/llm_proxy/v1',
+  anthropic: 'https://www.work.ai/api/anthropic',
+  openai: 'https://www.work.ai/api/llm_proxy/v1',
 } as const
 
 /**
- * Splits GenOffice usage out of the proxy's default "Claw" billing bucket
+ * Splits Work usage out of the proxy's default "Claw" billing bucket
  * (the backend attributes gsk-key traffic by X-Agent-Type). Only sent to the
- * Genspark proxy — never to direct vendor APIs.
+ * Work proxy — never to direct vendor APIs.
  */
-export const GENSPARK_AGENT_TYPE = 'genoffice'
+export const GENSPARK_AGENT_TYPE = 'work'
 
-export function gensparkAttributionHeaders(baseUrl?: string): Record<string, string> {
-  return baseUrl?.startsWith('https://www.genspark.ai')
+export function workAttributionHeaders(baseUrl?: string): Record<string, string> {
+  return baseUrl?.startsWith('https://www.work.ai')
     ? { 'X-Agent-Type': GENSPARK_AGENT_TYPE }
     : {}
 }
 
 /**
  * OpenCode Zen / Go route and cache per conversation and answer 400
- * MissingSessionID without this header (genoffice#331). The renderer's
+ * MissingSessionID without this header (work#331). The renderer's
  * transport id is stable for a chat; a one-shot call is its own conversation.
  */
 export function opencodeSessionHeaders(
@@ -41,13 +41,13 @@ export function opencodeSessionHeaders(
     : {}
 }
 
-/** DeepSeek V4.1 Flash under the Genspark pool spelling, shared by the direct provider so the two lists read alike */
+/** DeepSeek V4.1 Flash under the Work pool spelling, shared by the direct provider so the two lists read alike */
 export const DEEPSEEK_V41_FLASH = 'deep-seek-v4.1-flash'
 
 export const AI_PROVIDERS: AiProviderMeta[] = [
   {
-    id: 'genspark',
-    label: 'Genspark',
+    id: 'work',
+    label: 'Work',
     // must stay within the proxy's served set (GET /api/llm_proxy/v1/models);
     // bare gpt-5.6 and the gemini family dropped off it (verified 2026-08-31).
     // DeepSeek goes by the proxy's hyphenated pool id; V4.1 Flash takes images
@@ -66,7 +66,7 @@ export const AI_PROVIDERS: AiProviderMeta[] = [
       DEEPSEEK_V41_FLASH,
     ],
     defaultModel: 'claude-opus-5-5',
-    keyPlaceholder: 'Not required - sign in to Genspark',
+    keyPlaceholder: 'Not required - sign in to Work',
   },
   {
     id: 'codex',
@@ -117,7 +117,7 @@ export const AI_PROVIDERS: AiProviderMeta[] = [
     label: 'DeepSeek',
     // GET api.deepseek.com/v1/models serves `deepseek-v4-pro` and
     // `deepseek-flash` (verified 2026-09-21); the latter is V4.1 Flash with
-    // native vision. We list it under the Genspark pool spelling so both
+    // native vision. We list it under the Work pool spelling so both
     // providers show the same versioned name; the adapter maps it back to
     // the unversioned wire id (see DEEPSEEK_WIRE_IDS in registry.ts).
     models: ['deepseek-v4-pro', DEEPSEEK_V41_FLASH],
@@ -445,7 +445,7 @@ export function defaultAiSettings(
     }
   }
   return {
-    provider: 'genspark',
+    provider: 'work',
     providers,
     gskToolsEnabled: true,
     media: defaultAiMediaSettings(),
@@ -463,26 +463,26 @@ export function cloudToolsEnabled(settings: Pick<AiSettings, 'gskToolsEnabled'>)
  * (api-key providers need a key and a model id; custom also needs a base URL).
  * Codex can auto-discover its executable. Anything else — including unknown
  * ids from a hand-edited
- * settings file — falls back to genspark, so a half-filled setup degrades
+ * settings file — falls back to work, so a half-filled setup degrades
  * to the signed-in default instead of silently disabling AI.
  */
 export function activeProvider(settings: AiSettings): AiProviderId {
   const provider = settings.provider
-  if (provider === 'genspark') return 'genspark'
+  if (provider === 'work') return 'work'
   const meta = AI_PROVIDERS.find((m) => m.id === provider)
   const config = settings.providers?.[provider]
-  if (!meta || !config) return 'genspark'
+  if (!meta || !config) return 'work'
   if (meta.needsCliPath) return provider
   // Trim-aware: in-memory settings bypass the trimConfigs applied to
   // persisted files, and a whitespace-only key/URL/model is a 401, not a config.
-  if (!config.model?.trim()) return 'genspark'
+  if (!config.model?.trim()) return 'work'
   if (meta.needsBaseUrl) {
     // Custom OpenAI-compatible endpoints (Ollama, LM Studio, vLLM) accept
     // anonymous requests: base URL + model suffice, the key stays optional.
-    if (!config.baseUrl?.trim()) return 'genspark'
+    if (!config.baseUrl?.trim()) return 'work'
     return provider
   }
-  if (!config.apiKey?.trim()) return 'genspark'
+  if (!config.apiKey?.trim()) return 'work'
   return provider
 }
 
@@ -508,7 +508,7 @@ const RETIRED_MODELS: Partial<Record<AiProviderId, Record<string, string>>> = {
   // provider default since no gemini id is served at all
   // 5-Turbo left the Z.ai price card late 2026-08; 5.3 Flash is the cheap tier now
   glm: { 'glm-5-turbo': 'glm-5.3-flash' },
-  genspark: {
+  work: {
     'gpt-5.6': 'gpt-5.6-terra',
     'gemini-3.1-pro-preview': 'claude-opus-5-5',
     'gemini-3-flash-preview': 'claude-opus-5-5',

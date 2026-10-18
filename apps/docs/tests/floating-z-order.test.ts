@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shape Format Arrange: the stacking commands the ribbon and the object
  * context menu share. Ranks are document-global among floating anchors, and
  * an inline anchor is promoted to a front float so the reorder is visible —
@@ -7,7 +7,7 @@
 import { Editor } from '@tiptap/core'
 import { NodeSelection } from '@tiptap/pm/state'
 import { describe, expect, it } from 'vitest'
-import { parseDocx, type TextboxDisplay } from '@genoffice/docx-engine'
+import { parseDocx, type TextboxDisplay } from '@work/docx-engine'
 import {
   buildDocx,
   IMAGE_PARAGRAPH_XML,

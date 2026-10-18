@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Cell-anchored boxes: positionV relativeFrom="paragraph" resolves from the
  * anchor paragraph, so the display strut must sit before that paragraph, and
  * exact line spacing inside a fixed-height box must not inherit the page's
  * line height (the single line would fall outside the clip window).
  */
 import { describe, expect, it } from 'vitest'
-import type { TableModel, TextboxDisplay } from '@genoffice/docx-engine'
+import type { TableModel, TextboxDisplay } from '@work/docx-engine'
 import { pmTableToModel, tableModelToPmNode } from '../src/renderer/editor/convert'
 import { renderTextboxSpec } from '../src/renderer/editor/protected-render'
 

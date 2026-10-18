@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Rich header/footer editing: a nested TipTap editor (textbox sub-editor
  * schema + tab stops) hosts the part's text paragraphs, so ribbon formatting
  * routes into it like a shape's text. PAGE / NUMPAGES field sentinels become
@@ -14,7 +14,7 @@ import {
   type HeaderFooter,
   type HfParagraph,
   type Run,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { dropActiveSubEditor, notifySubEditorState, setActiveSubEditor } from './active-editor'
 import { inlineToRuns, runsToInline, type PmNode } from './convert'
 import { TextboxParagraph, textboxSubExtensions } from './extensions'

@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const ru = {
   appScTitle: 'Сочетания клавиш',
@@ -319,13 +319,13 @@ export const ru = {
   appTabBar: 'С чертой',
   appTabClear: 'Очистить',
   appAiSettings: 'Настройки ИИ',
-  appGensparkAccount: 'Учетная запись Genspark',
+  appWorkAccount: 'Учетная запись Work',
   appChecking: 'Проверка…',
   appLoggedIn: 'Выполнен вход',
   appLoggedInEmail: 'Выполнен вход: {email}',
-  appNotLoggedIn: 'Вход не выполнен (для функций ИИ требуется учетная запись Genspark)',
+  appNotLoggedIn: 'Вход не выполнен (для функций ИИ требуется учетная запись Work)',
   appWaitingBrowserLogin: 'Ожидание входа через браузер…',
-  appLoginGenspark: 'Войти в Genspark',
+  appLoginWork: 'Войти в Work',
   appModel: 'Модель',
   appCut: 'Вырезать',
   appCopy: 'Копировать',

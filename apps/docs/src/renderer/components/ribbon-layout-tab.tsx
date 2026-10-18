@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react'
-import { type SectionSettings, type TextboxDisplay } from '@genoffice/docx-engine'
+﻿import { useRef, useState } from 'react'
+import { type SectionSettings, type TextboxDisplay } from '@work/docx-engine'
 import { WRAP_OPTIONS } from './ContextMenu'
 import { MarginDialog, marginsFitPage, type PageMargins } from './MarginDialog'
 import { LengthInput } from './LengthInput'

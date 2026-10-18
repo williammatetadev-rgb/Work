@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Preset shape geometry for docs: gallery previews and textbox shape
  * backgrounds share the geometry the saved OOXML prstGeom describes.
  * The shape visual is a data-URI SVG background so the box DOM stays a plain
@@ -8,7 +8,7 @@ import {
   isPillPreset,
   presetPath,
   presetPolygon,
-} from '@genoffice/ui'
+} from '@work/ui'
 
 const R = (v: number) => Math.round(v * 100) / 100
 

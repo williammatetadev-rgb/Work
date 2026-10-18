@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+﻿import React, { useEffect, useRef, useState } from 'react'
 import {
   PAGE_MARK,
   TOTAL_PAGES_MARK,
   type HfImage,
   type HfParagraph,
   type Run,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { useI18n } from '../i18n/locale'
 import { spellcheckEnabled } from '../spellcheck-pref'
 import {

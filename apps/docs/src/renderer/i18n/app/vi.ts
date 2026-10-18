@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const vi = {
   appScTitle: 'Phím tắt bàn phím',
@@ -313,13 +313,13 @@ export const vi = {
   appTabBar: 'Thanh dọc',
   appTabClear: 'Xóa',
   appAiSettings: 'Cài đặt AI',
-  appGensparkAccount: 'Tài khoản Genspark',
+  appWorkAccount: 'Tài khoản Work',
   appChecking: 'Đang kiểm tra…',
   appLoggedIn: 'Đã đăng nhập',
   appLoggedInEmail: 'Đã đăng nhập: {email}',
-  appNotLoggedIn: 'Chưa đăng nhập (tính năng AI yêu cầu tài khoản Genspark)',
+  appNotLoggedIn: 'Chưa đăng nhập (tính năng AI yêu cầu tài khoản Work)',
   appWaitingBrowserLogin: 'Đang chờ đăng nhập trên trình duyệt…',
-  appLoginGenspark: 'Đăng nhập Genspark',
+  appLoginWork: 'Đăng nhập Work',
   appModel: 'Mô hình',
   appCut: 'Cắt',
   appCopy: 'Sao chép',

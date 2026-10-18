@@ -1,5 +1,5 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
-import { parseDocx, type Block } from '@genoffice/docx-engine'
+﻿import { afterEach, describe, expect, it, vi } from 'vitest'
+import { parseDocx, type Block } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import {
   blockTexts,

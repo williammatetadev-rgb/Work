@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Advance-width contract of the bundled Tamil face (fonts/README.md): advances
  * rewritten to Word's Latha (tools/build-tamil-font.py). A regenerated woff2
  * that loses the normalization would drift Tamil line breaks ~27% vs Word
@@ -9,9 +9,9 @@ import { describe, expect, it } from 'vitest'
 import { advanceEm, readWoff2 } from './helpers/woff2-metrics'
 
 const FONTS = join(__dirname, '../src/renderer/fonts')
-const tamil = readWoff2(join(FONTS, 'GenOfficeTamil-Regular.woff2'))
+const tamil = readWoff2(join(FONTS, 'WorkTamil-Regular.woff2'))
 
-describe('GenOffice Tamil (Latha-normalized)', () => {
+describe('Work Tamil (Latha-normalized)', () => {
   it('space and digits match Latha', () => {
     expect(advanceEm(tamil, 0x20)).toBeCloseTo(0.578, 3)
     for (let cp = 0x30; cp <= 0x39; cp++) {

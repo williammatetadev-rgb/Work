@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Picture pixel-edit dialogs shared by the office apps: remove background (tolerance cutout)
  * and crop. Ported from apps/pdf ImageDialogs (itself a port of docs' PictureDialogs); apps
  * pass their own strings through `labels` and import `image-dialogs.css` for the chrome.
@@ -16,7 +16,7 @@ import type {
 import { removeBackground, sampleBackgroundColors, type PixelImage, type RGB } from './cutout'
 import { useModalKeys } from './modal-keys'
 import { CROP_EDGE_LABELS } from './strings-crop-edges'
-import type { Lang } from '@genoffice/i18n'
+import type { Lang } from '@work/i18n'
 
 export interface ImageDialogLabels {
   cancel: string

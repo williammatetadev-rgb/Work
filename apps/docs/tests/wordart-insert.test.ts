@@ -1,4 +1,4 @@
-/**
+﻿/**
  * WordArt insertion tests - Item 3: WordArt (simplified) → save → re-parse
  *
  * Verifies:
@@ -15,8 +15,8 @@ import {
   parseDocx,
   saveDocx,
   type TextboxDisplay,
-} from '@genoffice/docx-engine'
-import { WORDART_PRESETS, wordArtSolidColor, type WordArtPreset } from '@genoffice/ui'
+} from '@work/docx-engine'
+import { WORDART_PRESETS, wordArtSolidColor, type WordArtPreset } from '@work/ui'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { blocksToPmDoc, pmDocToSavePlan, type PmNode } from '../src/renderer/editor/convert'
 import { editorExtensions } from '../src/renderer/editor/extensions'

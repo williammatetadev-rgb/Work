@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word keeps hangul words whole (the renderer's word-break:keep-all) unless the
  * paragraph turns w:wordWrap off, when lines may break between syllables
  * (Word probe 2026-09-03: "방위|군의"; Latin words still stay whole, which is
@@ -6,7 +6,7 @@
  */
 import { describe, expect, it } from 'vitest'
 import { DOMSerializer } from '@tiptap/pm/model'
-import type { TableModel } from '@genoffice/docx-engine'
+import type { TableModel } from '@work/docx-engine'
 import { renderTableSpec } from '../src/renderer/editor/protected-render'
 
 const render = (spec: unknown): HTMLElement =>

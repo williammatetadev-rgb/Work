@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
 import { undoDepth } from '@tiptap/pm/history'
 import {
@@ -6,7 +6,7 @@ import {
   BLANK_ORDERED_NUM_ID,
   buildBlankDocx,
   parseDocx,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { blocksToPmDoc } from '../src/renderer/editor/convert'
 import {
   buildDocWriterRequest,

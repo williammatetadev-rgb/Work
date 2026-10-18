@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import type { Block, InkInfo } from '@genoffice/docx-engine'
+﻿import { describe, expect, it } from 'vitest'
+import type { Block, InkInfo } from '@work/docx-engine'
 import { pmDocToSavePlan, type PmNode } from '../src/renderer/editor/convert'
 import {
   annotationsFromParsed,

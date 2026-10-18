@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const th = {
   ribbonAiCreditNote: 'เรียกใช้ AI และใช้เครดิต',
@@ -188,7 +188,7 @@ export const th = {
   ribbonReplaceTip: 'ค้นหาและแทนที่ข้อความ',
   ribbonSelectAll: 'เลือกทั้งหมด',
   ribbonSelectAllTip: 'เลือกทั้งเอกสาร',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: 'เปิดผู้ช่วย AI',
   ribbonRemoveTableStyleTip: 'เอาสไตล์ตารางออก',
   ribbonNoStyle: 'ไม่มีสไตล์',

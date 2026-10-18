@@ -1,15 +1,15 @@
-import { createHash } from 'node:crypto'
+﻿import { createHash } from 'node:crypto'
 import { createReadStream } from 'node:fs'
 import { open, stat } from 'node:fs/promises'
 import { inflateRawSync } from 'node:zlib'
 import { protocol } from 'electron'
-import { DOCX_MEDIA_SCHEME_PRIVILEGE } from '@genoffice/electron-utils'
+import { DOCX_MEDIA_SCHEME_PRIVILEGE } from '@work/electron-utils'
 import { takeHandoff } from './byte-handoff'
 import {
   LAZY_MEDIA_SCHEME,
   isLazyMediaPart,
   parseLazyMediaUrl,
-} from '@genoffice/docx-engine/lazy-media'
+} from '@work/docx-engine/lazy-media'
 import {
   bufferSource,
   lazyMediaHashesIn,
@@ -19,7 +19,7 @@ import {
   slimDocx,
   type ZipEntry,
   type ZipFile,
-} from '@genoffice/docx-engine/zip-splice'
+} from '@work/docx-engine/zip-splice'
 
 /** documents carrying at least this much browser-decodable media open lazily:
  *  below it the pictures ride along as data URLs (a copy in the model, the DOM

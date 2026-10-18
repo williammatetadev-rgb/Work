@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test'
+﻿import { expect, test, type Page } from '@playwright/test'
 import { mkdtemp, readFile, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -50,7 +50,7 @@ async function pointOnWord(page: Page, needle: string): Promise<{ x: number; y: 
 test.describe('withholding a span from the model', () => {
   test('docs: name a selection, and the run keeps its words in the .docx', async () => {
     test.setTimeout(180_000)
-    const dir = await mkdtemp(join(tmpdir(), 'genoffice-redact-docs-'))
+    const dir = await mkdtemp(join(tmpdir(), 'work-redact-docs-'))
     const docxPath = join(dir, 'call.docx')
     const W = 'xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"'
     const p = (text: string) => `<w:p><w:r><w:t xml:space="preserve">${text}</w:t></w:r></w:p>`

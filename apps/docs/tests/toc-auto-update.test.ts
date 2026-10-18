@@ -1,11 +1,11 @@
-/**
+﻿/**
  * TOC page-number persistence: an editor-generated TOC line whose fieldDisplay
  * page was auto-refreshed after repagination must save the refreshed number
  * (the genXml still carries the number from generation time).
  */
 import { describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
-import { generateTocFieldXml, parseDocx } from '@genoffice/docx-engine'
+import { generateTocFieldXml, parseDocx } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { blocksToPmDoc, pmDocToSavePlan, type PmNode } from '../src/renderer/editor/convert'
 import { editorExtensions } from '../src/renderer/editor/extensions'

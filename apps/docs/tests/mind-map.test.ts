@@ -1,4 +1,4 @@
-import { Editor } from '@tiptap/core'
+﻿import { Editor } from '@tiptap/core'
 import { describe, expect, it } from 'vitest'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import { executeTool } from '../src/renderer/ai/tools'
@@ -13,7 +13,7 @@ import {
   wrapLabel,
 } from '../src/renderer/ai/mind-map'
 import { AGENT_SYSTEM_PROMPT } from '../src/renderer/ai/protocol'
-import type { MindMapTreeNode } from '@genoffice/agent-core'
+import type { MindMapTreeNode } from '@work/agent-core'
 
 const NUM_IDS = { bullet: null, ordered: null }
 
@@ -37,7 +37,7 @@ function fixtureEditor(): Editor {
       type: 'doc',
       content: [
         heading('Chapter 1 Overview'),
-        para('GenSpark is an AI office suite.'),
+        para('Work is an AI office suite.'),
         heading('Risk Notes'),
         para('This document is for reference only.'),
       ],
@@ -419,7 +419,7 @@ describe('generate_mindmap tool', () => {
 
 describe('MIND_MAP_TOOL schema', () => {
   it('gives every array an items schema (Gemini refuses the whole request without one)', () => {
-    // genoffice#2059: the leaf `children` array carried only a description,
+    // work#2059: the leaf `children` array carried only a description,
     // and the API answered "...properties[children].items: missing field".
     const walk = (node: unknown): void => {
       if (typeof node !== 'object' || node === null) return

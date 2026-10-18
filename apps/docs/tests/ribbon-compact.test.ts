@@ -1,4 +1,4 @@
-// Compact ribbon (#362): the middle density between "full" and "collapsed".
+﻿// Compact ribbon (#362): the middle density between "full" and "collapsed".
 // ⌥⌘K / Ctrl+Alt+K cycles full ↔ compact; the band stays visible and the active
 // tab stays highlighted, which is what separates compact from collapsed.
 import { beforeEach, describe, expect, it } from 'vitest'
@@ -10,7 +10,7 @@ import {
   readRibbonDensity,
   useRibbonCollapse,
   type RibbonDensity,
-} from '@genoffice/ui'
+} from '@work/ui'
 
 const TABS = ['home', 'insert'] as const
 // the opt-in labels: without `compact`/`expandFull` the hook stays two-state

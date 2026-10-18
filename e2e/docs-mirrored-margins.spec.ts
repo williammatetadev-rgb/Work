@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test'
+﻿import { test, expect, type Page } from '@playwright/test'
 import { mkdtempSync, readFileSync, realpathSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -110,7 +110,7 @@ test.describe('docs mirrored margins', () => {
   let docPath: string
 
   test.beforeEach(async () => {
-    dir = realpathSync(mkdtempSync(join(tmpdir(), 'genoffice-e2e-mirror-')))
+    dir = realpathSync(mkdtempSync(join(tmpdir(), 'work-e2e-mirror-')))
     docPath = join(dir, 'mirror.docx')
     writeFileSync(docPath, await twoPageDocx())
   })

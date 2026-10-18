@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdtemp, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -25,7 +25,7 @@ function hugePagePdf(): Buffer {
 }
 
 test('image-sized PDF opens at true fit-to-width, not the old 50% zoom floor', async () => {
-  const dir = await mkdtemp(join(tmpdir(), 'genoffice-pdf-fit-'))
+  const dir = await mkdtemp(join(tmpdir(), 'work-pdf-fit-'))
   const pdfPath = join(dir, 'huge.pdf')
   await writeFile(pdfPath, hugePagePdf())
 

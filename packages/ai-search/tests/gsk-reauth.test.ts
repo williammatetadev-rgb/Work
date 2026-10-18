@@ -1,9 +1,9 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+﻿import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
-// the shared gsk CLI login (~/.genspark-tool-cli) is a key fallback: point
+// the shared gsk CLI login (~/.work-tool-cli) is a key fallback: point
 // homedir at an empty dir so the developer's real login cannot leak in
 const home = vi.hoisted(() => ({ dir: '' }))
 vi.mock('node:os', async (importOriginal) => {
@@ -13,10 +13,10 @@ vi.mock('node:os', async (importOriginal) => {
 
 import {
   FRESH_AUTH_REQUIRED,
-  genofficeApiKey,
+  workApiKey,
   resetGenofficeAuthCache,
   setGenofficeLoginOpener,
-} from '../src/genoffice-auth'
+} from '../src/work-auth'
 import {
   GskAuthError,
   gskApiKey,
@@ -29,14 +29,14 @@ import {
   resetGskRejectedKeys,
 } from '../src/gsk'
 
-const AUTH_URL = `https://www.genspark.ai/api/office_addin_auth/verify?code=${'a'.repeat(64)}`
+const AUTH_URL = `https://www.work.ai/api/office_addin_auth/verify?code=${'a'.repeat(64)}`
 
 let dir: string
 
 beforeEach(() => {
   dir = mkdtempSync(join(tmpdir(), 'gsk-reauth-'))
   home.dir = dir
-  process.env.GENOFFICE_AUTH_DIR = dir
+  process.env.WORK_AUTH_DIR = dir
   process.env.GSK_CLI_PATH = '/fake/gsk.js'
   delete process.env.GSK_API_KEY
   delete process.env.AI_SEARCH_DISABLE_GSK
@@ -55,7 +55,7 @@ afterEach(() => {
   resetGskRejectedKeys()
   rmSync(dir, { recursive: true, force: true })
   home.dir = ''
-  delete process.env.GENOFFICE_AUTH_DIR
+  delete process.env.WORK_AUTH_DIR
   delete process.env.GSK_CLI_PATH
 })
 
@@ -120,7 +120,7 @@ describe('tool_cli 401 recovery', () => {
       bytes: expect.any(Uint8Array),
     })
     expect(toolKeys).toEqual(['gsk-expired', 'gsk-new', 'gsk-new'])
-    expect(genofficeApiKey()).toBe('gsk-new')
+    expect(workApiKey()).toBe('gsk-new')
     expect(opener).not.toHaveBeenCalled()
   })
 
@@ -145,7 +145,7 @@ describe('tool_cli 401 recovery', () => {
       vi.fn(async () => response('boom', 500)),
     )
     await expect(gskSlideGenerate({ brief: 'x' })).rejects.toThrow(/HTTP 500/)
-    expect(genofficeApiKey()).toBe('gsk-expired')
+    expect(workApiKey()).toBe('gsk-expired')
   })
 })
 
@@ -205,7 +205,7 @@ describe('noteGskCallFailure (LLM proxy chat/stream)', () => {
       stubServer(() => response({ detail: FRESH_AUTH_REQUIRED }, 403))
       expect(gskApiKey()).toBe('gsk-env')
       noteGskCallFailure('gsk-env', 'HTTP 401: Unauthorized')
-      // falls through to GenOffice's own (still valid) key
+      // falls through to Work's own (still valid) key
       expect(gskApiKey()).toBe('gsk-expired')
     } finally {
       delete process.env.GSK_API_KEY

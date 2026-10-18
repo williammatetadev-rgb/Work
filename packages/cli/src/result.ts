@@ -1,4 +1,4 @@
-/** Process exit codes; the JSON error payload carries the same number. */
+﻿/** Process exit codes; the JSON error payload carries the same number. */
 export const EXIT = {
   ok: 0,
   usage: 1,
@@ -148,7 +148,7 @@ export function formatHuman(r: CommandResult): string {
 }
 
 export function formatHumanError(err: CliError): string {
-  const lines = [`genoffice: ${err.message}`]
+  const lines = [`work: ${err.message}`]
   if (err.suggestion) lines.push(`  hint: ${err.suggestion}`)
   if (err.detail) {
     const { batch, ...rest } = err.detail

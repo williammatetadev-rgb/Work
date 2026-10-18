@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A picture-only paragraph under an auto line multiple is the picture extent
  * plus (m - 1) x the paragraph mark's single line below it (Word probe: Calibri
  * 11 mark, line=259 -> 1.2pt, line=360 -> 6.72pt, independent of the picture
@@ -8,7 +8,7 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { Editor } from '@tiptap/core'
-import { parseDocx } from '@genoffice/docx-engine'
+import { parseDocx } from '@work/docx-engine'
 import { describe, expect, it } from 'vitest'
 import {
   buildDocx,

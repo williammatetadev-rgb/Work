@@ -1,4 +1,4 @@
-import { mkdtemp, writeFile } from 'node:fs/promises'
+﻿import { mkdtemp, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { test, expect } from '@playwright/test'
@@ -6,7 +6,7 @@ import { launchShell, closeAndSaveVideo, waitForPageWithUrl, screenshotPath } fr
 
 test.describe('html editor: insert, resize, drag', () => {
   test('Insert menu adds elements, handles resize, dragging the grip reorders', async () => {
-    const dir = await mkdtemp(join(tmpdir(), 'genoffice-html-'))
+    const dir = await mkdtemp(join(tmpdir(), 'work-html-'))
     const htmlPath = join(dir, 'layout.html')
     const source =
       '<!doctype html>\n<html>\n<body>\n<section class="hero">\n  <h1 id="title">Hello</h1>\n  <p class="lead">First line.</p>\n  <p class="note">Second\n    line.</p>\n</section>\n</body>\n</html>\n'

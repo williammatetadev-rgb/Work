@@ -1,4 +1,4 @@
-import { mkdtemp, rm, writeFile } from 'node:fs/promises'
+﻿import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
@@ -51,7 +51,7 @@ export async function printHtmlDocument({
   html,
   window: win,
   fileName = 'print.html',
-  dirPrefix = 'genoffice-print-',
+  dirPrefix = 'work-print-',
   platform = process.platform,
 }: PrintDocumentOptions): Promise<PrintDialogOutcome> {
   let tempDir: string | null = null

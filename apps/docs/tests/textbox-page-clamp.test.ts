@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word keeps floating drawing objects on the page: a column-relative posOffset
  * X hanging past a paper edge is pulled back on at display time (e.g.
  * a Word-authored rectangle at -4629150 EMU drew 9.9cm left of the page and
@@ -6,7 +6,7 @@
  * offset is never rewritten.
  */
 import { describe, expect, it } from 'vitest'
-import type { TextboxDisplay } from '@genoffice/docx-engine'
+import type { TextboxDisplay } from '@work/docx-engine'
 import { textboxBoxStyle } from '../src/renderer/editor/protected-render'
 
 const box = (extra: Partial<TextboxDisplay>): TextboxDisplay => ({

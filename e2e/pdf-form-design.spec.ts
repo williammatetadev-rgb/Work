@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdtemp, readFile, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -6,7 +6,7 @@ import { PDFDocument, PDFName } from 'pdf-lib'
 import { launchShell, waitForPageWithUrl, closeAndSaveVideo } from './helpers'
 
 test('Form Design authors text, checkbox and signature fields that Done writes as real AcroForm widgets', async () => {
-  const dir = await mkdtemp(join(tmpdir(), 'genoffice-pdf-formdesign-'))
+  const dir = await mkdtemp(join(tmpdir(), 'work-pdf-formdesign-'))
   const pdfPath = join(dir, 'blank.pdf')
   const blank = await PDFDocument.create()
   blank.addPage([612, 792])

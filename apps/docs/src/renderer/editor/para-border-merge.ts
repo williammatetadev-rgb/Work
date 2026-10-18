@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Word merges adjacent paragraphs whose border and shading settings are
  * identical into one border group (ECMA-376 §17.3.1.24): top/bottom lines draw
  * only at the group's edges (no w:between = no inner lines). Display-only —
  * the merge is applied as decoration classes; the borders attrs (which the
  * save path serializes back to w:pBdr) are never touched.
  */
-import type { ParaBorderLine, ParaBorderSides } from '@genoffice/docx-engine'
+import type { ParaBorderLine, ParaBorderSides } from '@work/docx-engine'
 
 /** the paragraph attrs Word's border-group merging compares */
 export interface ParaBorderAttrs {

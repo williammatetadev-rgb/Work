@@ -1,4 +1,4 @@
-/// App-wide navigation lockdown for every webContents in the suite.
+﻿/// App-wide navigation lockdown for every webContents in the suite.
 ///
 /// Every renderer is a local single-page app loaded exactly once via
 /// loadFile/loadURL (which do not emit will-navigate), so a full-page
@@ -16,7 +16,7 @@ import type { App } from 'electron'
 // Symbol.for: the flag survives multiple bundled copies of this module
 // (each app bundle ships its own electron-utils, and the shell hosts all of
 // them in one process).
-const INSTALLED = Symbol.for('genoffice.navigation-guard-installed')
+const INSTALLED = Symbol.for('work.navigation-guard-installed')
 
 export function installNavigationGuard(app: App): void {
   const holder = app as unknown as Record<symbol, boolean | undefined>

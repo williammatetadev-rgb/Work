@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Sanitiser for the HTML `marked` produced from a plain-text Markdown paste.
  *
  * `marked` is a converter, not a sanitiser: it copies link targets and raw
@@ -13,7 +13,7 @@
  * the rest of the suite already applies to `shell.openExternal`: a target
  * this app would refuse to open is never stored in the first place.
  */
-import { safeExternalUrl } from '@genoffice/electron-utils/safe-external-url'
+import { safeExternalUrl } from '@work/electron-utils/safe-external-url'
 import { PERSISTABLE_IMAGE_URL } from './persistable-image'
 
 /// Protocol allowlist for a link target, matching the open-external gate.

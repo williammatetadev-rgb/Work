@@ -1,4 +1,4 @@
-import type { Editor, JSONContent } from '@tiptap/core'
+﻿import type { Editor, JSONContent } from '@tiptap/core'
 import {
   buildAnchoredTextboxParagraphXml,
   type ImageWrap,
@@ -8,7 +8,7 @@ import {
   type TextboxDisplay,
   type Watermark,
   type WatermarkSpec,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import type { AgentToolDef } from '../../shared/ipc'
 import { blockRangePositions } from './doc-utils'
 import { emuToPx, parseEmu, parsePoints } from './lengths'

@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs'
+﻿import { existsSync, readFileSync } from 'node:fs'
 import { extname } from 'node:path'
 import { assertAllowed, type PathContext } from '../fs'
 import { isAbsolute, resolve } from 'node:path'
@@ -15,7 +15,7 @@ import {
   type Paragraph,
   type Slide,
   type SlideElement,
-} from '@genoffice/pptx-engine'
+} from '@work/pptx-engine'
 import {
   elementDurableId,
   listSlideAnimations,
@@ -24,7 +24,7 @@ import {
   type AnimationEntry,
   type Op,
   type TxnResult,
-} from '@genoffice/pptx-ops'
+} from '@work/pptx-ops'
 import { CliError, EXIT } from '../result'
 import { clipText } from '../preview'
 import { fromEmu, type ReadUnit } from '../length-units'

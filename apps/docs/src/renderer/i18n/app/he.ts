@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const he = {
   appScTitle: 'קיצורי מקלדת',
@@ -307,13 +307,13 @@ export const he = {
   appTabBar: 'קו',
   appTabClear: 'נקה',
   appAiSettings: 'הגדרות AI',
-  appGensparkAccount: 'חשבון Genspark',
+  appWorkAccount: 'חשבון Work',
   appChecking: 'בודק…',
   appLoggedIn: 'מחובר',
   appLoggedInEmail: 'מחובר: {email}',
-  appNotLoggedIn: 'לא מחובר (תכונות ה-AI דורשות חשבון Genspark)',
+  appNotLoggedIn: 'לא מחובר (תכונות ה-AI דורשות חשבון Work)',
   appWaitingBrowserLogin: 'ממתין להתחברות בדפדפן…',
-  appLoginGenspark: 'התחברות ל-Genspark',
+  appLoginWork: 'התחברות ל-Work',
   appModel: 'מודל',
   appCut: 'גזירה',
   appCopy: 'העתקה',

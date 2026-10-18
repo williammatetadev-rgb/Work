@@ -1,4 +1,4 @@
-// DOM line-box sampling for page-crossing blocks (cached per element), the
+﻿// DOM line-box sampling for page-crossing blocks (cached per element), the
 // line-split re-slice, table row cut positions and line anchors.
 import { rangeSlot } from './dom-range'
 import { applyBlockMeta, lineLeadPx } from './pagination-measure'
@@ -63,7 +63,7 @@ const PATCH_KEYS = [
 
 /**
  * Carry the previous pass's line/row samples onto the freshly measured blocks
- * of a streaming open's pass (genoffice#526): only the appended tail can
+ * of a streaming open's pass (work#526): only the appended tail can
  * change layout, and fillLineBoxes skips blocks that already carry samples, so
  * the unchanged prefix pays no DOM sampling at all — the sampler's own
  * per-element cache still charges a full subtree signature per block per pass.

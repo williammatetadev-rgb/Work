@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const nl = {
   ribbonAiCreditNote: 'Gebruikt AI en verbruikt tegoed',
@@ -192,7 +192,7 @@ export const nl = {
   ribbonReplaceTip: 'Tekst zoeken en vervangen',
   ribbonSelectAll: 'Alles selecteren',
   ribbonSelectAllTip: 'Het hele document selecteren',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: 'De AI-assistent openen',
   ribbonRemoveTableStyleTip: 'Tabelstijl verwijderen',
   ribbonNoStyle: 'Geen stijl',

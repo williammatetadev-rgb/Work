@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import type { PictureRenderNode, RenderSlide, ShapeRenderNode } from '@genoffice/pptx-render'
+﻿import { describe, expect, it } from 'vitest'
+import type { PictureRenderNode, RenderSlide, ShapeRenderNode } from '@work/pptx-render'
 import { auditSlideFindings, auditSlideLayout, formatAudit } from '../src/slides/layout-audit'
 
 const W = 1280

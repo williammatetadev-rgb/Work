@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const en = {
   appScTitle: 'Keyboard Shortcuts',
@@ -310,13 +310,13 @@ export const en = {
   appTabBar: 'Bar',
   appTabClear: 'Clear',
   appAiSettings: 'AI Settings',
-  appGensparkAccount: 'Genspark account',
+  appWorkAccount: 'Work account',
   appChecking: 'Checking…',
   appLoggedIn: 'Signed in',
   appLoggedInEmail: 'Signed in: {email}',
-  appNotLoggedIn: 'Not signed in (AI features require a Genspark account)',
+  appNotLoggedIn: 'Not signed in (AI features require a Work account)',
   appWaitingBrowserLogin: 'Waiting for browser sign-in…',
-  appLoginGenspark: 'Sign in to Genspark',
+  appLoginWork: 'Sign in to Work',
   appModel: 'Model',
   appCut: 'Cut',
   appCopy: 'Copy',

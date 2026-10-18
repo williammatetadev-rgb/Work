@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest'
+﻿import { afterEach, describe, expect, it } from 'vitest'
 import type { Editor } from '@tiptap/core'
 import {
   buildBlankDocx,
@@ -8,7 +8,7 @@ import {
   TOTAL_PAGES_MARK,
   type HeaderFooter,
   type SaveBlock,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import {
   hfDocJson,
   hfValueFromDoc,

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { launchShell, closeAndSaveVideo, waitForPageWithUrl } from './helpers'
 import { mkdtemp, writeFile, stat, readFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
@@ -17,7 +17,7 @@ const KINDS = [
 
 for (const { ext, url, channel } of KINDS) {
   test(`empty .${ext} opens blank and saves back to its own path`, async () => {
-    const dir = await mkdtemp(join(tmpdir(), 'genoffice-empty-'))
+    const dir = await mkdtemp(join(tmpdir(), 'work-empty-'))
     const filePath = join(dir, `empty.${ext}`)
     await writeFile(filePath, '')
     const launched = await launchShell({

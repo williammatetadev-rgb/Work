@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { launchShell, closeAndSaveVideo, screenshotPath } from './helpers'
 
 test.describe('home screen', () => {
@@ -22,7 +22,7 @@ test.describe('home screen', () => {
     }
   })
 
-  test('renders localized UI when GENOFFICE_LANG=zh-CN', async () => {
+  test('renders localized UI when WORK_LANG=zh-CN', async () => {
     const launched = await launchShell({
       onboardingSeen: true,
       lang: 'zh-CN',

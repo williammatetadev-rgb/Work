@@ -1,4 +1,4 @@
-{
+﻿{
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
@@ -8,19 +8,19 @@
       // resolve workspace types from this checkout's sources: in a git worktree
       // node_modules is a symlink into the main checkout, so bare specifiers
       // would typecheck against the other checkout's (possibly stale) types
-      "@genoffice/docx-engine": ["../../packages/docx-engine/src/index.ts"],
-      "@genoffice/font-metrics": ["../../packages/font-metrics/src/index.ts"],
-      "@genoffice/electron-utils/headless-export": [
+      "@work/docx-engine": ["../../packages/docx-engine/src/index.ts"],
+      "@work/font-metrics": ["../../packages/font-metrics/src/index.ts"],
+      "@work/electron-utils/headless-export": [
         "../../packages/electron-utils/src/headless-export.ts"
       ],
-      "@genoffice/electron-utils/atomic-write": [
+      "@work/electron-utils/atomic-write": [
         "../../packages/electron-utils/src/atomic-write.ts"
       ],
-      "@genoffice/electron-utils": ["../../packages/electron-utils/src/index.ts"],
-      "@genoffice/ai-provider": ["../../packages/ai-provider/src/index.ts"],
-      "@genoffice/agent-core": ["../../packages/agent-core/src/index.ts"],
-      "@genoffice/i18n": ["../../packages/i18n/src/index.ts"],
-      "@genoffice/ui": ["../../packages/ui/src/index.ts"]
+      "@work/electron-utils": ["../../packages/electron-utils/src/index.ts"],
+      "@work/ai-provider": ["../../packages/ai-provider/src/index.ts"],
+      "@work/agent-core": ["../../packages/agent-core/src/index.ts"],
+      "@work/i18n": ["../../packages/i18n/src/index.ts"],
+      "@work/ui": ["../../packages/ui/src/index.ts"]
     }
   },
   "include": ["src", "tests", "electron.vite.config.ts", "vitest.config.ts"]

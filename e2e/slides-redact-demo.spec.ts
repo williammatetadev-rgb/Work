@@ -1,4 +1,4 @@
-import { test, expect, _electron as electron } from '@playwright/test'
+﻿import { test, expect, _electron as electron } from '@playwright/test'
 import { mkdtemp, readFile, writeFile, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
@@ -102,7 +102,7 @@ async function buildPptx(path: string): Promise<void> {
 
 test('a reader can withhold a picture from the model without losing it', async () => {
   test.setTimeout(180_000)
-  const dir = await mkdtemp(join(tmpdir(), 'genoffice-redact-slides-'))
+  const dir = await mkdtemp(join(tmpdir(), 'work-redact-slides-'))
   const pptx = join(dir, 'deck.pptx')
   await buildPptx(pptx)
 
@@ -115,7 +115,7 @@ test('a reader can withhold a picture from the model without losing it', async (
       resolve('apps/slides'),
       pptx,
     ],
-    env: { ...env, GENOFFICE_USER_DATA: join(dir, 'user-data'), GENOFFICE_LANG: 'en' },
+    env: { ...env, WORK_USER_DATA: join(dir, 'user-data'), WORK_LANG: 'en' },
   })
   try {
     const page = await app.firstWindow()

@@ -1,4 +1,4 @@
-/** Standalone HTML export: live editor DOM re-emitted with computed styles inlined, no app CSS needed. */
+﻿/** Standalone HTML export: live editor DOM re-emitted with computed styles inlined, no app CSS needed. */
 
 const SKIP_CLASSES = new Set([
   'ProseMirror-widget',
@@ -97,7 +97,7 @@ const BIDI_KEEP = new Set(['bidi-override', 'isolate-override', 'plaintext', 'em
 /** Review / content-control badges drawn by the editor, not document text. */
 const CHROME_PSEUDO_CONTENT = /attr\(\s*data-(?:ppr-change-label|sdt-alias)\s*\)/
 
-const INTERNAL_FONTS = /,\s*"(?:[A-Za-z ]+ GO|GenOffice [A-Za-z ]+)"/g
+const INTERNAL_FONTS = /,\s*"(?:[A-Za-z ]+ GO|Work [A-Za-z ]+)"/g
 
 /** tab leaders are an absolutely positioned glyph run clipped to the tab
  *  advance on screen; inline styles cannot clip a pseudo, so export a border */

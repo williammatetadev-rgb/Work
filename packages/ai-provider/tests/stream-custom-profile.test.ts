@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Stream-level integration for the declarative custom endpoint: the declared
  * protocol decides the wire shape of the request (path, auth header, body
  * naming), the declared headers reach the wire, and the model declaration
@@ -6,7 +6,7 @@
  * gateway usable without any code change.
  */
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import type { AgentToolCall } from '@genoffice/agent-core'
+import type { AgentToolCall } from '@work/agent-core'
 import { streamForProvider } from '../src/stream'
 import { chatForProvider } from '../src/chat'
 import type { AiProviderConfig, AiSettings } from '../src/types'

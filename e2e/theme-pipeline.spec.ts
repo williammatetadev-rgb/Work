@@ -1,4 +1,4 @@
-import { mkdtemp, writeFile } from 'node:fs/promises'
+﻿import { mkdtemp, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { test, expect, type ElectronApplication, type Page } from '@playwright/test'
@@ -36,7 +36,7 @@ function setTheme(page: Page, theme: 'light' | 'dark' | 'system'): Promise<void>
 
 test.describe('theme pipeline', () => {
   test('setTheme reaches home and editor tabs, persists across relaunch', async () => {
-    const dir = await mkdtemp(join(tmpdir(), 'genoffice-theme-'))
+    const dir = await mkdtemp(join(tmpdir(), 'work-theme-'))
     const mdPath = join(dir, 'doc.md')
     await writeFile(mdPath, '# Doc\n\nBody.\n')
 

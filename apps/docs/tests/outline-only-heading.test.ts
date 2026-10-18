@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A direct w:outlineLvl on a non-heading style makes the paragraph an outline /
  * TOC entry but Word keeps its body formatting: no built-in heading size, font
  * or italic may apply. Styled headings keep the built-in look.
@@ -8,7 +8,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { afterEach, describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
-import { parseDocx } from '@genoffice/docx-engine'
+import { parseDocx } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import { blocksToPmDoc, pmNodeToGeneratedBlock } from '../src/renderer/editor/convert'

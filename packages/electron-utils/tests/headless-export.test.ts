@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest'
+﻿import { describe, expect, it, vi } from 'vitest'
 
 import {
   HEADLESS_EXIT,
@@ -12,7 +12,7 @@ import {
 
 /** argv as Electron delivers it: binary first, then the app's own switches. */
 const argv = (...rest: string[]): string[] => [
-  '/Applications/GenOffice.app/Contents/MacOS/GenOffice',
+  '/Applications/Work.app/Contents/MacOS/Work',
   ...rest,
 ]
 
@@ -135,7 +135,7 @@ describe('formatHeadlessEnvelope', () => {
 })
 
 describe('headlessExitCode', () => {
-  it('maps outcomes to the genoffice exit-code convention', () => {
+  it('maps outcomes to the work exit-code convention', () => {
     expect(headlessExitCode({ ok: true, input: '/a', outPath: '/b' })).toBe(0)
     expect(headlessExitCode({ ok: false, code: HEADLESS_EXIT.badArgs, message: 'x' })).toBe(1)
     expect(headlessExitCode({ ok: false, code: HEADLESS_EXIT.inputError, message: 'x' })).toBe(2)

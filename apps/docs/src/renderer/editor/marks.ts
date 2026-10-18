@@ -1,4 +1,4 @@
-import { Extension, Mark, combineTransactionSteps, getChangedRanges } from '@tiptap/core'
+﻿import { Extension, Mark, combineTransactionSteps, getChangedRanges } from '@tiptap/core'
 import type { Mark as PmMark } from '@tiptap/pm/model'
 import { Plugin, PluginKey } from '@tiptap/pm/state'
 import { Decoration, DecorationSet } from '@tiptap/pm/view'
@@ -22,7 +22,7 @@ import {
   positionDecl,
   textEffectDecls,
 } from './text-effects'
-import { symbolGlyph, symbolPuaChar } from '@genoffice/docx-engine'
+import { symbolGlyph, symbolPuaChar } from '@work/docx-engine'
 import { symbolFontCovers } from '../font-check'
 
 /**
@@ -468,10 +468,10 @@ export function fontAttrsFromFamilyChain(chain: string | undefined): Record<stri
         !/^var\(|\)$/.test(x) &&
         !/^(serif|sans-serif|monospace|cursive|fantasy|system-ui)$/i.test(x) &&
         !CSS_ONLY_FAMILY.test(x) &&
-        // internal fonts.css aliases are not user picks: 'GenOffice *', the
+        // internal fonts.css aliases are not user picks: 'Work *', the
         // '* GO' renamed/range-limited faces (Carlito GO, KR Theme Latin GO,
         // Noto Sans/Serif CJK GO...) and the size-adjusted Noto Arabic aliases
-        !/^genoffice /i.test(x) &&
+        !/^work /i.test(x) &&
         !/ go$/i.test(x) &&
         !/^noto (naskh|sans) arabic (w|ta|tnr)$/i.test(x),
     )

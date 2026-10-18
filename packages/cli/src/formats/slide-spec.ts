@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
+﻿import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { basename, extname, join, resolve } from 'node:path'
 import {
   auditDeck,
@@ -14,16 +14,16 @@ import {
   type DeckPageIssue,
   type OutlineIssue,
   type PageSpec,
-} from '@genoffice/pipelines/slides'
+} from '@work/pipelines/slides'
 import {
   deleteSlide,
   mergeSlideFromPptx,
   moveSlide,
   promoteSlideBackground,
   type OpenedPptx,
-} from '@genoffice/pptx-engine'
-import { HeuristicMetrics } from '@genoffice/pptx-render'
-import { extract } from '@genoffice/pdf2docx'
+} from '@work/pptx-engine'
+import { HeuristicMetrics } from '@work/pptx-render'
+import { extract } from '@work/pdf2docx'
 import { assertAllowed, type PathContext } from '../fs'
 import { CliError, EXIT, type ErrorHints } from '../result'
 
@@ -164,7 +164,7 @@ export function stageContext(
   if (outlineFile) out.outline = { file: outlineFile, outline: readOutline(outlineFile) }
   else {
     out.notes.push(
-      'no outline.json beside the page files or one folder up: the staged flow writes deck/outline.json first and checks every page against it (genoffice guide slides design)',
+      'no outline.json beside the page files or one folder up: the staged flow writes deck/outline.json first and checks every page against it (work guide slides design)',
     )
   }
   if (found.style) {

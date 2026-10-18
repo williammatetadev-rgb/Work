@@ -1,4 +1,4 @@
-import { Fragment, type Node as PmNode } from '@tiptap/pm/model'
+﻿import { Fragment, type Node as PmNode } from '@tiptap/pm/model'
 import { EditorState } from '@tiptap/pm/state'
 import type { Transaction } from '@tiptap/pm/state'
 import {
@@ -13,7 +13,7 @@ import {
   type Rect,
   type TableRect,
 } from '@tiptap/pm/tables'
-import type { CellBorder, CellBorders, StyleInfo, TableLook } from '@genoffice/docx-engine'
+import type { CellBorder, CellBorders, StyleInfo, TableLook } from '@work/docx-engine'
 import type { Op, OpDef, OpResult, RunEnv, Target, TopBlock } from './ops'
 
 /**

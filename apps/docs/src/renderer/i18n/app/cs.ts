@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const cs = {
   appScTitle: 'Klávesové zkratky',
@@ -315,13 +315,13 @@ export const cs = {
   appTabBar: 'Svislá čára',
   appTabClear: 'Vymazat',
   appAiSettings: 'Nastavení AI',
-  appGensparkAccount: 'Účet Genspark',
+  appWorkAccount: 'Účet Work',
   appChecking: 'Kontrola…',
   appLoggedIn: 'Přihlášeno',
   appLoggedInEmail: 'Přihlášeno: {email}',
-  appNotLoggedIn: 'Nepřihlášeno (funkce AI vyžadují účet Genspark)',
+  appNotLoggedIn: 'Nepřihlášeno (funkce AI vyžadují účet Work)',
   appWaitingBrowserLogin: 'Čeká se na přihlášení v prohlížeči…',
-  appLoginGenspark: 'Přihlásit se ke Genspark',
+  appLoginWork: 'Přihlásit se ke Work',
   appModel: 'Model',
   appCut: 'Vyjmout',
   appCopy: 'Kopírovat',

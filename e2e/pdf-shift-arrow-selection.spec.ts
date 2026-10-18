@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdtemp, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -36,7 +36,7 @@ function twoRunTextPdf(): Buffer {
  * non-collapsed selection present, Shift+navigation must reach the browser.
  */
 test('Shift+ArrowRight extends the text selection instead of flipping the page', async () => {
-  const dir = await mkdtemp(join(tmpdir(), 'genoffice-pdf-select-'))
+  const dir = await mkdtemp(join(tmpdir(), 'work-pdf-select-'))
   const pdfPath = join(dir, 'tworuns.pdf')
   await writeFile(pdfPath, twoRunTextPdf())
 

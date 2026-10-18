@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 
 import { decodeDataUrl, isSavableImageUrl, suggestImageFileName } from '../src/index'
 import { MAX_REMOTE_IMAGE_BYTES } from '../src/remote-image'
@@ -11,7 +11,7 @@ describe('isSavableImageUrl', () => {
   })
   it('refuses local files, renderer blobs and non-URLs', () => {
     expect(isSavableImageUrl('file:///etc/passwd')).toBe(false)
-    expect(isSavableImageUrl('blob:genoffice-app://docs/1234')).toBe(false)
+    expect(isSavableImageUrl('blob:work-app://docs/1234')).toBe(false)
     expect(isSavableImageUrl('assets/image.png')).toBe(false)
   })
 })

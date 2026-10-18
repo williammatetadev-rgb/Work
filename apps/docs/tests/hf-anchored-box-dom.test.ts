@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import type { HfParagraph, HfTextBox } from '@genoffice/docx-engine'
+﻿import { describe, expect, it } from 'vitest'
+import type { HfParagraph, HfTextBox } from '@work/docx-engine'
 import {
   hfTextBoxClass,
   hfTextBoxStyle,

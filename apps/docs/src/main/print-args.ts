@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Pure validators for the PDF print/export IPC args (docs:print-pdf-buffer,
  * docs:print, docs:save-merged-pdf). Renderer-supplied numbers reach Chromium
  * printToPDF verbatim, so they are range-checked here; the handlers stay thin.
@@ -35,5 +35,5 @@ export function printScaleOption(scale: unknown): { scale: number } | Record<str
     : {}
 }
 
-export { printJobOptions } from '@genoffice/electron-utils/print-job'
-export type { PrintDuplex, PrintJobOptions } from '@genoffice/electron-utils/print-job'
+export { printJobOptions } from '@work/electron-utils/print-job'
+export type { PrintDuplex, PrintJobOptions } from '@work/electron-utils/print-job'

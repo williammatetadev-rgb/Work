@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word paints automatic-colour text white on dark shading (cell, paragraph, run
  * or table-style fill). The renderer marks such elements with data-ink="light";
  * styles.css flips the inherited ink there while explicit colours stay inline.
@@ -7,8 +7,8 @@ import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { Editor } from '@tiptap/core'
-import { parseDocx } from '@genoffice/docx-engine'
-import type { ParsedDocFull, StyleInfo, TableStyleDisplay } from '@genoffice/docx-engine'
+import { parseDocx } from '@work/docx-engine'
+import type { ParsedDocFull, StyleInfo, TableStyleDisplay } from '@work/docx-engine'
 import { describe, expect, it } from 'vitest'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { blocksToPmDoc } from '../src/renderer/editor/convert'

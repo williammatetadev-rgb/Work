@@ -1,24 +1,24 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
-import { isAllowedAuthUrl, startGenofficeLogin } from '../src/genoffice-auth'
+﻿import { afterEach, describe, expect, it, vi } from 'vitest'
+import { isAllowedAuthUrl, startGenofficeLogin } from '../src/work-auth'
 
 describe('isAllowedAuthUrl', () => {
-  const BASE = 'https://www.genspark.ai'
+  const BASE = 'https://www.work.ai'
 
   it('accepts https on the endpoint host', () => {
-    expect(isAllowedAuthUrl('https://www.genspark.ai/login?x=1', BASE)).toBeTruthy()
+    expect(isAllowedAuthUrl('https://www.work.ai/login?x=1', BASE)).toBeTruthy()
   })
 
   it('accepts sibling hosts on the endpoint registrable domain (review point 1)', () => {
     // the verify page may move between the auth service's own hosts
-    expect(isAllowedAuthUrl('https://auth.genspark.ai/device', BASE)).toBeTruthy()
-    expect(isAllowedAuthUrl('https://genspark.ai/device', BASE)).toBeTruthy()
+    expect(isAllowedAuthUrl('https://auth.work.ai/device', BASE)).toBeTruthy()
+    expect(isAllowedAuthUrl('https://work.ai/device', BASE)).toBeTruthy()
   })
 
   it('accepts siblings of a non-www staging base', () => {
     expect(
       isAllowedAuthUrl(
-        'https://auth.staging.genspark.ai/device',
-        'https://www.staging.genspark.ai',
+        'https://auth.staging.work.ai/device',
+        'https://www.staging.work.ai',
       ),
     ).toBeTruthy()
   })
@@ -27,10 +27,10 @@ describe('isAllowedAuthUrl', () => {
     // a staging endpoint must not be able to send the browser to production,
     // and no host outside the endpoint's registrable domain passes
     expect(
-      isAllowedAuthUrl('https://www.genspark.ai/device', 'https://staging.genspark.ai'),
+      isAllowedAuthUrl('https://www.work.ai/device', 'https://staging.work.ai'),
     ).toBeFalsy()
-    expect(isAllowedAuthUrl('https://genspark.ai.evil.example/x', BASE)).toBeFalsy()
-    expect(isAllowedAuthUrl('https://notgenspark.ai/x', BASE)).toBeFalsy()
+    expect(isAllowedAuthUrl('https://work.ai.evil.example/x', BASE)).toBeFalsy()
+    expect(isAllowedAuthUrl('https://notwork.ai/x', BASE)).toBeFalsy()
   })
 
   it('refuses other protocols and unparseable input', () => {
@@ -38,7 +38,7 @@ describe('isAllowedAuthUrl', () => {
       'file:///etc/passwd',
       'smb://share/x',
       'ms-msdt:-foo',
-      'http://www.genspark.ai/login',
+      'http://www.work.ai/login',
       'javascript:alert(1)',
       'not a url',
     ]) {
@@ -82,7 +82,7 @@ describe('startGenofficeLogin auth_url allowlist', () => {
         headers: { 'content-type': 'application/json' },
       })
     }) as typeof fetch
-    process.env.GSK_BASE_URL = 'https://www.genspark.ai'
+    process.env.GSK_BASE_URL = 'https://www.work.ai'
   }
 
   afterEach(() => {
@@ -100,14 +100,14 @@ describe('startGenofficeLogin auth_url allowlist', () => {
     expect(events).toEqual([{ phase: 'error', error: 'auth_url_rejected' }])
   })
 
-  it('opens a sibling-host auth_url (auth.genspark.ai) end-to-end', async () => {
-    stubDeviceCode('https://auth.genspark.ai/device?code=abc')
+  it('opens a sibling-host auth_url (auth.work.ai) end-to-end', async () => {
+    stubDeviceCode('https://auth.work.ai/device?code=abc')
     const events: { phase: string; url?: string }[] = []
     startGenofficeLogin((p) => events.push(p))
     await vi.waitFor(() => expect(events.at(-1)?.phase).toBe('error')) // poll stub answers 'expired'
     expect(events[0]).toEqual({
       phase: 'url',
-      url: 'https://auth.genspark.ai/device?code=abc',
+      url: 'https://auth.work.ai/device?code=abc',
       expiresInSec: 1,
     })
   })

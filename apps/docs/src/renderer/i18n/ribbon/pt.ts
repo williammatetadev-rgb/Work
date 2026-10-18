@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const pt = {
   ribbonAiCreditNote: 'Usa IA e consome créditos',
@@ -191,7 +191,7 @@ export const pt = {
   ribbonReplaceTip: 'Localizar e substituir texto',
   ribbonSelectAll: 'Selecionar tudo',
   ribbonSelectAllTip: 'Selecionar o documento inteiro',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: 'Abrir o assistente de IA',
   ribbonRemoveTableStyleTip: 'Remover estilo da tabela',
   ribbonNoStyle: 'Sem Estilo',

@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Review > Comments: Previous / Next walk the open threads in document order
  * and light the thread up in the pane; Delete ▾ removes the thread under the
  * caret, every resolved thread, or all of them in one document pass.
  */
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Editor } from '@tiptap/core'
-import type { CommentInfo } from '@genoffice/docx-engine'
+import type { CommentInfo } from '@work/docx-engine'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import {
   commentAnchors,

@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const nl = {
   appScTitle: 'Sneltoetsen',
@@ -325,13 +325,13 @@ export const nl = {
   appTabBar: 'Balk',
   appTabClear: 'Wissen',
   appAiSettings: 'AI-instellingen',
-  appGensparkAccount: 'Genspark-account',
+  appWorkAccount: 'Work-account',
   appChecking: 'Controleren…',
   appLoggedIn: 'Aangemeld',
   appLoggedInEmail: 'Aangemeld: {email}',
-  appNotLoggedIn: 'Niet aangemeld (AI-functies vereisen een Genspark-account)',
+  appNotLoggedIn: 'Niet aangemeld (AI-functies vereisen een Work-account)',
   appWaitingBrowserLogin: 'Wachten op aanmelding in de browser…',
-  appLoginGenspark: 'Aanmelden bij Genspark',
+  appLoginWork: 'Aanmelden bij Work',
   appModel: 'Model',
   appCut: 'Knippen',
   appCopy: 'Kopiëren',

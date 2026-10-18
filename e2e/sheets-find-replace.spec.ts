@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdtemp, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -69,7 +69,7 @@ async function waitForWorkbook(page: Page): Promise<void> {
 // dialog stays hidden). The panel searches as you type, lists every match
 // under Find All, replaces across the session, and closes on Escape.
 test('sheets: Excel-style Find & Replace panel', async () => {
-  const scratch = await mkdtemp(join(tmpdir(), 'genoffice-findreplace-e2e-'))
+  const scratch = await mkdtemp(join(tmpdir(), 'work-findreplace-e2e-'))
   const workbook = join(scratch, 'find-replace.xlsx')
   await writeFile(workbook, await buildWorkbook())
 

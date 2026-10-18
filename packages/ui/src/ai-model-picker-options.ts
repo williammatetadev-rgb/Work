@@ -1,4 +1,4 @@
-import {
+﻿import {
   AI_PROVIDERS,
   activeProvider,
   customEndpointLabel,
@@ -6,7 +6,7 @@ import {
   upsertCustomEndpoint,
   type AiProviderId,
   type AiSettings,
-} from '@genoffice/ai-provider/browser'
+} from '@work/ai-provider/browser'
 
 export interface AiModelPickerGroup {
   readonly id: AiProviderId
@@ -23,7 +23,7 @@ export interface AiModelPickerSelection {
 }
 
 /**
- * Providers the composer chip may switch to: Genspark while signed in, every
+ * Providers the composer chip may switch to: Work while signed in, every
  * other vendor once its settings pass the same usability test the chat path
  * applies (`activeProvider`), so picking a row never lands on a 401. A model
  * typed into the settings page that is not in the catalog is listed first.
@@ -60,7 +60,7 @@ export function aiModelPickerGroups(input: AiSettings, gskLoggedIn: boolean): Ai
     // CLI vendors pass activeProvider unconfigured (the binary auto-discovers);
     // list them only once the settings page holds a model or a path
     const usable =
-      meta.id === 'genspark'
+      meta.id === 'work'
         ? gskLoggedIn
         : meta.needsCliPath
           ? Boolean(stored || config?.cliPath?.trim())

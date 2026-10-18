@@ -1,4 +1,4 @@
-import {
+﻿import {
   aiPanelWidthAtPointer,
   AiPanelSideButton,
   AiModelPicker,
@@ -9,10 +9,10 @@ import {
   addTokenUsage,
   type AiTokenUsageView,
   useChatRunQueue,
-} from '@genoffice/ui'
+} from '@work/ui'
 import { useEffect, useRef, useState } from 'react'
 import type { Editor } from '@tiptap/core'
-import type { Block } from '@genoffice/docx-engine'
+import type { Block } from '@work/docx-engine'
 import {
   AgentLoop,
   composeSkills,
@@ -21,9 +21,9 @@ import {
   type AgentImage,
   type KbFileInfo,
   type MindMapTreeNode,
-} from '@genoffice/agent-core'
+} from '@work/agent-core'
 import { redactTextBetween, type RedactableNode } from './redact-view'
-import { imageGenerationAvailable, mediaAnalysisAvailable } from '@genoffice/ai-provider/browser'
+import { imageGenerationAvailable, mediaAnalysisAvailable } from '@work/ai-provider/browser'
 import type { AiSettings, AttachmentAddResult, AttachmentMeta } from '../../shared/ipc'
 import { ATTACHMENT_IMAGE_EXTS } from '../../shared/ipc'
 import type { PmNode } from '../editor/convert'
@@ -65,9 +65,9 @@ import { createFilesSkill } from './files-skill'
 import { boundChatHistory } from './chat-retention'
 import { createElectronTransport } from './transport'
 import { useI18n, t as tModule, aiLangDirective, type StringKey } from '../i18n/locale'
-import { createFileNav, Markdown } from '@genoffice/ui'
-import { AiComposer, AiScopeQuote, AiTypingIndicator, type AiScopeQuoteData } from '@genoffice/ui'
-import { GensparkMark } from '../components/icons'
+import { createFileNav, Markdown } from '@work/ui'
+import { AiComposer, AiScopeQuote, AiTypingIndicator, type AiScopeQuoteData } from '@work/ui'
+import { WorkMark } from '../components/icons'
 import sendEnterOn from '../assets/send-enter-on.png'
 import sendEnterOff from '../assets/send-enter-off.png'
 import sendStop from '../assets/send-stop.png'
@@ -118,7 +118,7 @@ interface ChatEntry {
   error?: string
   streaming?: boolean
   turnLimit?: boolean
-  /** the run failed because Genspark is signed out — render an inline sign-in button */
+  /** the run failed because Work is signed out — render an inline sign-in button */
   loginRequired?: boolean
   /** tool executions performed during this assistant turn */
   tools?: ToolActivity[]
@@ -188,7 +188,7 @@ const PASTE_MIME_EXT: Record<string, string> = {
   'image/webp': 'webp',
 }
 
-/** File-type icons for attachment cards (Genspark attachment icon set); exts the
+/** File-type icons for attachment cards (Work attachment icon set); exts the
  *  attachment allowlist doesn't accept yet are mapped ahead so they light up when added */
 const ATTACHMENT_CARD_ICON_GROUPS: [icon: string, exts: string[]][] = [
   [fileWordIcon, ['doc', 'docx']],
@@ -430,7 +430,7 @@ export function AiPanel({
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null)
   const [attachments, setAttachments] = useState<AttachmentMeta[]>([])
   const [attachNotice, setAttachNotice] = useState<string | null>(null)
-  /** data-URL previews for image attachments, keyed by path (Genspark composer thumbnails) */
+  /** data-URL previews for image attachments, keyed by path (Work composer thumbnails) */
   const [attachmentPreviews, setAttachmentPreviews] = useState<Record<string, string>>({})
   /** image paths with a read already issued — one readAttachmentImage per attach, even while pending */
   const previewRequestedRef = useRef(new Set<string>())
@@ -961,13 +961,13 @@ export function AiPanel({
           })
           // Signed-out failures get an inline sign-in button; detected via
           // gsk status rather than matching the localized error text — but only
-          // when Genspark is the provider: a BYOK user's error (e.g. their own
-          // provider's rate limit) must not advertise a Genspark sign-in (genoffice#1948)
+          // when Work is the provider: a BYOK user's error (e.g. their own
+          // provider's rate limit) must not advertise a Work sign-in (work#1948)
           void window.desktop
             .aiGskStatus()
             .then((status) => {
               if (status.loggedIn) return
-              if ((settingsRef.current?.provider ?? 'genspark') !== 'genspark') return
+              if ((settingsRef.current?.provider ?? 'work') !== 'work') return
               setChat((prev) => {
                 const next = [...prev]
                 const last = next.at(-1)
@@ -1389,7 +1389,7 @@ export function AiPanel({
         aria-label={t('appExpandAiPanel')}
         onClick={onExpand}
       >
-        <GensparkMark size={22} />
+        <WorkMark size={22} />
       </button>
     )
   }
@@ -1421,7 +1421,7 @@ export function AiPanel({
       />
       <div className="ai-panel-header">
         <span className="ai-panel-title">
-          <GensparkMark size={22} />
+          <WorkMark size={22} />
           {t('aiPanelTitle')}
         </span>
         <div className="ai-panel-header-actions">

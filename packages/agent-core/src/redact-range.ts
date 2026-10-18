@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The model-facing text of a document *range*.
  *
  * ## Why this lives here and not in an app
@@ -205,6 +205,6 @@ function walkInline(
  * It lives here rather than in either engine because the two of them need it,
  * and a per-app stack has to build with only the core and one app present.
  */
-export const REDACT_NS = 'https://genspark.ai/genoffice/redaction/2026'
+export const REDACT_NS = 'https://work.ai/work/redaction/2026'
 export const REDACT_PREFIX = 'go'
 export const REDACT_EL = `${REDACT_PREFIX}:redact`

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Multi-page spec → one pptx: every page is built with buildPagePptx and the
  * results are merged in order, exactly how the app lands generated pages.
  */
@@ -7,7 +7,7 @@ import {
   openPptx,
   promoteSlideBackground,
   savePptx,
-} from '@genoffice/pptx-engine'
+} from '@work/pptx-engine'
 import {
   buildPagePptx,
   parsePageSpecObject,

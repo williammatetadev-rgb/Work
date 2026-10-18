@@ -1,4 +1,4 @@
-/**
+﻿/**
  * The Shape Format tab's Arrange group: wrap text plus the stacking commands,
  * where Word puts them. The commands themselves are unit-tested in
  * floating-z-order.test.ts; this mounts the real ribbon and checks the group
@@ -9,7 +9,7 @@ import { act, createElement } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Editor } from '@tiptap/core'
 import { NodeSelection } from '@tiptap/pm/state'
-import { parseDocx } from '@genoffice/docx-engine'
+import { parseDocx } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { Ribbon } from '../src/renderer/components/Ribbon'
 import { computeFormatState } from '../src/renderer/components/ribbon-format-state'

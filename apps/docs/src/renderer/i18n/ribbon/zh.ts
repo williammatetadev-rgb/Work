@@ -1,4 +1,4 @@
-/** ribbon strings, zh: defines the key set every other locale shard must match. */
+﻿/** ribbon strings, zh: defines the key set every other locale shard must match. */
 export const zh = {
   ribbonAiCreditNote: '将调用 AI 并消耗额度',
   ribbonAiRewriteConfirm:
@@ -194,7 +194,7 @@ export const zh = {
   ribbonSelectAll: '全选',
   ribbonSelectAllTip: '选择整个文档',
   // Home · AI
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: '打开 AI 助手',
   // Table Design
   ribbonRemoveTableStyleTip: '移除表格样式',

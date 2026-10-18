@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import {
   AI_PROVIDER_ADAPTERS,
   getProviderAdapter,
@@ -22,8 +22,8 @@ describe('provider registry', () => {
     expect(Object.keys(AI_PROVIDER_ADAPTERS).sort()).toEqual(AI_PROVIDERS.map((m) => m.id).sort())
   })
 
-  it('routes genspark by model id prefix onto the two proxy endpoints', () => {
-    const resolve = (model: string) => AI_PROVIDER_ADAPTERS.genspark.resolveEndpoint(config(model))
+  it('routes work by model id prefix onto the two proxy endpoints', () => {
+    const resolve = (model: string) => AI_PROVIDER_ADAPTERS.work.resolveEndpoint(config(model))
     expect(resolve('claude-opus-4-7')).toEqual({
       protocol: 'anthropic',
       baseUrl: GENSPARK_LLM_BASE_URLS.anthropic,
@@ -314,10 +314,10 @@ describe('provider registry', () => {
     ).toBe('https://mirror/v1')
   })
 
-  it('only genspark authenticates through the gsk login', () => {
+  it('only work authenticates through the gsk login', () => {
     for (const [id, adapter] of Object.entries(AI_PROVIDER_ADAPTERS)) {
       expect(adapter.capabilities.auth).toBe(
-        id === 'genspark' ? 'gsk-login' : id === 'codex' ? 'codex-chatgpt' : 'api-key',
+        id === 'work' ? 'gsk-login' : id === 'codex' ? 'codex-chatgpt' : 'api-key',
       )
     }
   })

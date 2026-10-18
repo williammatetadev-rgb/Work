@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdirSync, mkdtempSync, realpathSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -35,7 +35,7 @@ test.describe('home file search', () => {
   let root: string
 
   test.beforeEach(async () => {
-    root = realpathSync(mkdtempSync(join(tmpdir(), 'genoffice-e2e-search-')))
+    root = realpathSync(mkdtempSync(join(tmpdir(), 'work-e2e-search-')))
     mkdirSync(join(root, 'Finance'))
     writeFileSync(join(root, 'Finance', 'quarterly-plan.docx'), await minimalDocx(HAN_BODY))
     writeFileSync(

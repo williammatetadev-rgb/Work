@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs'
+﻿import { readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import JSZip from 'jszip'
 import { describe, expect, it } from 'vitest'
@@ -14,7 +14,7 @@ async function part(path: string, name: string): Promise<string> {
   return zip.file(name)!.async('string')
 }
 
-describe('genoffice sheet apply --ops (workbook DSL)', () => {
+describe('work sheet apply --ops (workbook DSL)', () => {
   it('set_cell writes a string starting with "=" as a formula unless type is text', async () => {
     const dir = tempDir()
     const out = await book(dir, [['a', 1]])

@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const de = {
   appScTitle: 'Tastenkombinationen',
@@ -327,13 +327,13 @@ export const de = {
   appTabBar: 'Vertikale Linie',
   appTabClear: 'Löschen',
   appAiSettings: 'KI-Einstellungen',
-  appGensparkAccount: 'Genspark-Konto',
+  appWorkAccount: 'Work-Konto',
   appChecking: 'Wird überprüft…',
   appLoggedIn: 'Angemeldet',
   appLoggedInEmail: 'Angemeldet: {email}',
-  appNotLoggedIn: 'Nicht angemeldet (KI-Funktionen erfordern ein Genspark-Konto)',
+  appNotLoggedIn: 'Nicht angemeldet (KI-Funktionen erfordern ein Work-Konto)',
   appWaitingBrowserLogin: 'Warten auf Anmeldung im Browser…',
-  appLoginGenspark: 'Bei Genspark anmelden',
+  appLoginWork: 'Bei Work anmelden',
   appModel: 'Modell',
   appCut: 'Ausschneiden',
   appCopy: 'Kopieren',

@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest'
+﻿import { afterEach, describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
 import { TextSelection } from '@tiptap/pm/state'
 import {
@@ -7,7 +7,7 @@ import {
   buildBlankDocx,
   parseDocx,
   saveDocx,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { blocksToPmDoc, pmDocToSavePlan, type PmNode } from '../src/renderer/editor/convert'
 import { buildDocContext, getSelectionScope } from '../src/renderer/ai/protocol'
 import { executeTool } from '../src/renderer/ai/tools'

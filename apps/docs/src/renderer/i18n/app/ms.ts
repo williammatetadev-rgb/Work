@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const ms = {
   appScTitle: 'Pintasan Papan Kekunci',
@@ -319,13 +319,13 @@ export const ms = {
   appTabBar: 'Bar',
   appTabClear: 'Padam',
   appAiSettings: 'Tetapan AI',
-  appGensparkAccount: 'Akaun Genspark',
+  appWorkAccount: 'Akaun Work',
   appChecking: 'Menyemak…',
   appLoggedIn: 'Sudah log masuk',
   appLoggedInEmail: 'Sudah log masuk: {email}',
-  appNotLoggedIn: 'Belum log masuk (ciri AI memerlukan akaun Genspark)',
+  appNotLoggedIn: 'Belum log masuk (ciri AI memerlukan akaun Work)',
   appWaitingBrowserLogin: 'Menunggu log masuk pelayar…',
-  appLoginGenspark: 'Log masuk ke Genspark',
+  appLoginWork: 'Log masuk ke Work',
   appModel: 'Model',
   appCut: 'Potong',
   appCopy: 'Salin',

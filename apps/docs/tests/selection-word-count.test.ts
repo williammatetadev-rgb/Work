@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it } from 'vitest'
+﻿import { afterEach, describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
 import { NodeSelection } from '@tiptap/pm/state'
 import { editorExtensions } from '../src/renderer/editor/extensions'
@@ -52,8 +52,8 @@ describe('selectedWordCount', () => {
   })
 
   it('counts a mixed CJK/latin selection the way the dialog would', () => {
-    const editor = createEditor([para('GenOffice \u601d\u7ef4\u5bfc\u56fe')])
-    // the whole paragraph: "GenOffice" as 1 word + 4 asian chars
+    const editor = createEditor([para('Work \u601d\u7ef4\u5bfc\u56fe')])
+    // the whole paragraph: "Work" as 1 word + 4 asian chars
     editor.commands.setTextSelection({ from: 1, to: editor.state.doc.content.size - 1 })
     expect(selectedWordCount(editor.state.doc, editor.state.selection)).toBe(5)
   })

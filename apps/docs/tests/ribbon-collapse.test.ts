@@ -1,9 +1,9 @@
-// Word for Mac model: the selected tab collapses, any tab expands (and stays
+﻿// Word for Mac model: the selected tab collapses, any tab expands (and stays
 // expanded), the collapsed tab row has no selected tab.
 import { beforeEach, describe, expect, it } from 'vitest'
 import { act, createElement, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import { isRibbonToggleShortcut, readRibbonCollapsed, useRibbonCollapse } from '@genoffice/ui'
+import { isRibbonToggleShortcut, readRibbonCollapsed, useRibbonCollapse } from '@work/ui'
 
 const TABS = ['home', 'insert'] as const
 const LABELS = { collapse: 'Collapse', expand: 'Expand' }

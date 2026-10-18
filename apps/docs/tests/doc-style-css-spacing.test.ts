@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Style-CSS spacing semantics measured against Word (probe 2026-08-23):
  * - before/afterAutospacing = a fixed 14pt regardless of font size, at direct,
  *   style and docDefaults level; it collapses to 0 between two list items.
@@ -6,7 +6,7 @@
  *   direct w:contextualSpacing w:val="0" re-enables the paragraph's own spacing.
  */
 import { describe, expect, it } from 'vitest'
-import type { ParsedDocFull, StyleDisplay, StyleInfo } from '@genoffice/docx-engine'
+import type { ParsedDocFull, StyleDisplay, StyleInfo } from '@work/docx-engine'
 import { docStyleCss } from '../src/renderer/doc-style-css'
 
 ;(globalThis as { CSS?: unknown }).CSS ??= { escape: (s: string) => s }

@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, writeFile } from 'node:fs/promises'
+﻿import { mkdtemp, readFile, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { test, expect } from '@playwright/test'
@@ -81,7 +81,7 @@ async function hideSelection(page: import('@playwright/test').Page, label: strin
 
 test('a reader can withhold a value in the source view without changing the page', async () => {
   test.setTimeout(180_000)
-  const dir = await mkdtemp(join(tmpdir(), 'genoffice-redact-html-'))
+  const dir = await mkdtemp(join(tmpdir(), 'work-redact-html-'))
   const htmlPath = join(dir, 'page.html')
   await writeFile(htmlPath, SOURCE)
 

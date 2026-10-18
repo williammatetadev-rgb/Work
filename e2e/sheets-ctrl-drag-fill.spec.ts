@@ -1,16 +1,16 @@
-import { test, expect } from '@playwright/test'
+﻿import { test, expect } from '@playwright/test'
 import { mkdtemp } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import type { Page } from '@playwright/test'
 import { launchShell, closeAndSaveVideo, waitForPageWithUrl } from './helpers'
 
-// the preload exposes window.__genofficeDebug only under this env var; the
+// the preload exposes window.__workDebug only under this env var; the
 // spec seeds cells and reads them back through Univer's Facade
-process.env.GENOFFICE_DEBUG_HOOKS = '1'
+process.env.WORK_DEBUG_HOOKS = '1'
 
 /**
- * Excel's Ctrl+drag on the fill handle (genoffice#808): a lone number fills
+ * Excel's Ctrl+drag on the fill handle (work#808): a lone number fills
  * a series instead of repeating, a two-cell series repeats instead of
  * extending. Plain drags keep Univer's defaults.
  */
@@ -30,7 +30,7 @@ interface FacadeRange {
 function range(page: Page, row: number, column: number, rows = 1, columns = 1) {
   return page.evaluateHandle(
     ([r, c, nr, nc]) => {
-      const debug = (window as unknown as Record<string, unknown>).__genofficeDebug as {
+      const debug = (window as unknown as Record<string, unknown>).__workDebug as {
         univerAPI: {
           getActiveWorkbook(): {
             getActiveSheet(): {
@@ -89,7 +89,7 @@ async function dragFillDown(
 
 test.describe('sheets: modifier-drag on the fill handle flips copy and series', () => {
   test('a lone number repeats on a plain drag and counts up under the modifier', async () => {
-    const scratch = await mkdtemp(join(tmpdir(), 'genoffice-ctrl-fill-'))
+    const scratch = await mkdtemp(join(tmpdir(), 'work-ctrl-fill-'))
     const launched = await launchShell({ onboardingSeen: true, videoDir: 'sheets-ctrl-drag-fill' })
     try {
       const { app, page } = launched

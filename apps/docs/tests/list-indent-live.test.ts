@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Regression: A list created on a blank document must show its
  * indent immediately - the freshly allocated numbering definition has to be
  * synced into the renderer's numbering table (overlayNumberingDef), not only
@@ -7,7 +7,7 @@
  */
 import { Editor } from '@tiptap/core'
 import { describe, expect, it } from 'vitest'
-import { buildBlankDocx, parseDocx, saveDocx } from '@genoffice/docx-engine'
+import { buildBlankDocx, parseDocx, saveDocx } from '@work/docx-engine'
 import { blocksToPmDoc, pmDocToSavePlan } from '../src/renderer/editor/convert'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import { allocateListNumId, type NumberingContext } from '../src/renderer/numbering-actions'

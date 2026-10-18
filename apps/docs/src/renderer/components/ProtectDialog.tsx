@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word-style "Protect Document" dialog (Review > Protect), modeled on Word for
  * Mac's Password Protect sheet. One dialog covers all protection features:
  *
@@ -17,7 +17,7 @@ import {
   verifyProtectionPassword,
   type DocProtection,
   type WriteProtection,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { useI18n } from '../i18n/locale'
 import { FieldError, PasswordInput } from './PasswordInput'
 

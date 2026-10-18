@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import { parseDocx } from '@genoffice/docx-engine'
+﻿import { describe, expect, it } from 'vitest'
+import { parseDocx } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { docStyleCss } from '../src/renderer/doc-style-css'
 

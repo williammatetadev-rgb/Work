@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const fr = {
   appScTitle: 'Raccourcis clavier',
@@ -325,13 +325,13 @@ export const fr = {
   appTabBar: 'Barre',
   appTabClear: 'Effacer',
   appAiSettings: 'Paramètres IA',
-  appGensparkAccount: 'Compte Genspark',
+  appWorkAccount: 'Compte Work',
   appChecking: 'Vérification…',
   appLoggedIn: 'Connecté',
   appLoggedInEmail: 'Connecté : {email}',
-  appNotLoggedIn: 'Non connecté (les fonctionnalités IA nécessitent un compte Genspark)',
+  appNotLoggedIn: 'Non connecté (les fonctionnalités IA nécessitent un compte Work)',
   appWaitingBrowserLogin: 'En attente de la connexion dans le navigateur…',
-  appLoginGenspark: 'Se connecter à Genspark',
+  appLoginWork: 'Se connecter à Work',
   appModel: 'Modèle',
   appCut: 'Couper',
   appCopy: 'Copier',

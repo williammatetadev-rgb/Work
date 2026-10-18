@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word's list keys: Backspace at the start of an item removes the marker, then
  * the indent, then joins; Tab changes the level only from the item start;
  * Enter on an empty item climbs one level per press and finally leaves the
@@ -6,7 +6,7 @@
  */
 import { Editor } from '@tiptap/core'
 import { describe, expect, it } from 'vitest'
-import type { NumberingDef } from '@genoffice/docx-engine'
+import type { NumberingDef } from '@work/docx-engine'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 
 interface JsonNode {

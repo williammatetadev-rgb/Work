@@ -1,10 +1,10 @@
-/**
+﻿/**
  * List galleries and dialogs share these level presets: the bullet / numbering /
  * multilevel libraries, the number-style catalogue with samples, the recently
  * used presets (localStorage) and the "lists in this document" scan.
  */
-import { formatNumber, type CustomNumberingLevel, type NumberingDef } from '@genoffice/docx-engine'
-import { customLevelFromNumberingLevel } from '@genoffice/docx-engine'
+import { formatNumber, type CustomNumberingLevel, type NumberingDef } from '@work/docx-engine'
+import { customLevelFromNumberingLevel } from '@work/docx-engine'
 
 export const TWIPS_PER_CM = 567
 

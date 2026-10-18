@@ -1,4 +1,4 @@
-import type { PmNode } from './editor/convert'
+﻿import type { PmNode } from './editor/convert'
 
 /**
  * Word-style progressive open for large documents.
@@ -34,7 +34,7 @@ export interface PhasedContentHost {
 
 /** dispatched on document once a streamed tail has fully landed (layout
  *  measurers skip the tail's chunks and measure the whole document once) */
-export const PHASED_CONTENT_SETTLED_EVENT = 'genoffice:phased-content-settled'
+export const PHASED_CONTENT_SETTLED_EVENT = 'work:phased-content-settled'
 
 /** blocks in the first synchronous mount: overfills the first screens at any zoom */
 export const PHASE1_BLOCKS = 64

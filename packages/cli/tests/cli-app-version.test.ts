@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import {
   CLI_BUNDLE,
   CLI_VERSION_BANNER_PREFIX,
@@ -42,7 +42,7 @@ describe('packaged CLI version', () => {
   })
 
   it('builds into the bundle packaging ships', () => {
-    expect(CLI_BUNDLE.endsWith('genoffice.cjs')).toBe(true)
+    expect(CLI_BUNDLE.endsWith('work.cjs')).toBe(true)
   })
 })
 

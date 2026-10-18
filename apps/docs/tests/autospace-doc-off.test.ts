@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Word turns autoSpaceDE/DN off document-wide when the declared default East
  * Asian face does not resolve to an installed font (Word probe 2026-09-01,
  * SAS prod 049/047/044: docDefaults eastAsia "Noto Sans CJK KR/JP" renders
@@ -6,7 +6,7 @@
  * jsdom has no canvas, so every non-bundled face measures as missing here.
  */
 import { describe, expect, it } from 'vitest'
-import type { DocDefaults, ParsedDocFull, StyleInfo } from '@genoffice/docx-engine'
+import type { DocDefaults, ParsedDocFull, StyleInfo } from '@work/docx-engine'
 import { docAutospaceOff, docStyleCss } from '../src/renderer/doc-style-css'
 
 ;(globalThis as { CSS?: unknown }).CSS ??= { escape: (s: string) => s }

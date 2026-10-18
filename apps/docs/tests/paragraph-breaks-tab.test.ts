@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Paragraph dialog "Line and Page Breaks" tab: keepNext / keepLines /
  * widowControl / suppressLineNumbers round-trip as tri-state pPr flags and the
  * live pagination reads the edited value off the element, not the parsed block.
  */
 import { afterEach, describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
-import { generateParagraphXml, mergePPrFormat, parseDocx } from '@genoffice/docx-engine'
+import { generateParagraphXml, mergePPrFormat, parseDocx } from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import {

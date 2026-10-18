@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Issue #126 wave 2: paragraph-style and line-spacing commands backing the
  * ⌥⌘0-3 / ⌘1·2·5 shortcuts. applyParagraphStyle was extracted from the ribbon
  * gallery closure; these pin its Word-like behaviors (node switch + shedding
@@ -8,7 +8,7 @@ import { describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
 import { TextSelection } from '@tiptap/pm/state'
 import { editorExtensions } from '../src/renderer/editor/extensions'
-import { buildBlankDocx, parseDocx } from '@genoffice/docx-engine'
+import { buildBlankDocx, parseDocx } from '@work/docx-engine'
 import {
   applyParagraphStyle,
   applyParagraphStyleId,

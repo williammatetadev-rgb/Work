@@ -1,4 +1,4 @@
-import JSZip from 'jszip'
+﻿import JSZip from 'jszip'
 import { describe, expect, it } from 'vitest'
 import {
   generateCaptionXml,
@@ -116,7 +116,7 @@ describe('footnotes / endnotes', () => {
   })
 
   it('an edit to the paragraph keeps the reference run its own rPr', async () => {
-    // genoffice#2005: a rebuilt paragraph used to emit the marker as a bare superscript
+    // work#2005: a rebuilt paragraph used to emit the marker as a bare superscript
     const STYLED_REF_P =
       '<w:p><w:r><w:t xml:space="preserve">The court held so. </w:t></w:r>' +
       '<w:r><w:t>.</w:t></w:r>' +

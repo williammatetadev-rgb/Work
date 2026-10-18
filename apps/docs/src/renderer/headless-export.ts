@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Headless export mode: the renderer is hosted in a hidden window created by
  * `exportDocsHeadless` (main), with no user to open the document, watch
  * pagination settle or pick a save path. This module supplies only the
@@ -12,7 +12,7 @@ import {
   runHeadlessRendererExport,
   type HeadlessExportReport,
   type HeadlessWaitOptions,
-} from '@genoffice/electron-utils/headless-export'
+} from '@work/electron-utils/headless-export'
 
 /** Pagination publishes its slice list here on every remeasure (App.tsx). */
 interface PageDebug {

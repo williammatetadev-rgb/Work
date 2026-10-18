@@ -1,4 +1,4 @@
-/**
+﻿/**
  * A run's explicit `w:spacing w:val="0"` must reach the DOM as letter-spacing:0
  * on every render path so it overrides the paragraph style's spacing (sas2 058:
  * a Titre1 heading spaced 2pt by its style wrapped to two lines and pushed a
@@ -7,7 +7,7 @@
 import { Editor } from '@tiptap/core'
 import { DOMSerializer } from '@tiptap/pm/model'
 import { describe, expect, it } from 'vitest'
-import type { TextboxDisplay } from '@genoffice/docx-engine'
+import type { TextboxDisplay } from '@work/docx-engine'
 import { editorExtensions } from '../src/renderer/editor/extensions'
 import { inlineToRuns, runsToInline } from '../src/renderer/editor/convert'
 import { renderTextboxSpec } from '../src/renderer/editor/protected-render'

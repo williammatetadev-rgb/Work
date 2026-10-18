@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Review-tab actions: footnotes/endnotes, comments, revisions, ink
  * annotations and compare (document protection lives in ProtectDialog +
  * App.applyProtectDialog). Extracted from App.tsx; the App component passes a
@@ -6,7 +6,7 @@
  */
 import type { Editor } from '@tiptap/core'
 import { TextSelection } from '@tiptap/pm/state'
-import { nextNoteId, parseDocx, type CommentInfo, type NoteInfo } from '@genoffice/docx-engine'
+import { nextNoteId, parseDocx, type CommentInfo, type NoteInfo } from '@work/docx-engine'
 import type { Dispatch, SetStateAction } from 'react'
 import { authorName } from './author-name'
 import { fetchDocBytes } from './doc-bytes'

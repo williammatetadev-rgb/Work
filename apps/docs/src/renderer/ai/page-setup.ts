@@ -1,10 +1,10 @@
-import {
+﻿import {
   applyPageNumType,
   applySectionSettings,
   applyTitlePg,
   type SectionInfo,
   type SectionSettings,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import type { AgentToolDef } from '../../shared/ipc'
 
 /**

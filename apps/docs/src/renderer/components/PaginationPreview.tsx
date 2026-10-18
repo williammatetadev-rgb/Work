@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+﻿import { useEffect, useMemo, useState } from 'react'
 import type {
   CommentInfo,
   HeaderFooter,
@@ -6,8 +6,8 @@ import type {
   HfPartInfo,
   SectionInfo,
   SectionSettings,
-} from '@genoffice/docx-engine'
-import { decodeEntities } from '@genoffice/docx-engine'
+} from '@work/docx-engine'
+import { decodeEntities } from '@work/docx-engine'
 import {
   appendEndnotesBlock,
   appendFloatSpillBlock,

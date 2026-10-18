@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const id = {
   ribbonAiCreditNote: 'Menggunakan AI dan menghabiskan kredit',
@@ -191,7 +191,7 @@ export const id = {
   ribbonReplaceTip: 'Temukan dan ganti teks',
   ribbonSelectAll: 'Pilih Semua',
   ribbonSelectAllTip: 'Pilih seluruh dokumen',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: 'Buka asisten AI',
   ribbonRemoveTableStyleTip: 'Hapus gaya tabel',
   ribbonNoStyle: 'Tanpa Gaya',

@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const it = {
   appScTitle: 'Scelte rapide da tastiera',
@@ -321,13 +321,13 @@ export const it = {
   appTabBar: 'Barra',
   appTabClear: 'Cancella',
   appAiSettings: 'Impostazioni IA',
-  appGensparkAccount: 'Account Genspark',
+  appWorkAccount: 'Account Work',
   appChecking: 'Verifica in corso…',
   appLoggedIn: 'Accesso effettuato',
   appLoggedInEmail: 'Accesso effettuato: {email}',
-  appNotLoggedIn: 'Accesso non effettuato (le funzionalità IA richiedono un account Genspark)',
+  appNotLoggedIn: 'Accesso non effettuato (le funzionalità IA richiedono un account Work)',
   appWaitingBrowserLogin: "In attesa dell'accesso dal browser…",
-  appLoginGenspark: 'Accedi a Genspark',
+  appLoginWork: 'Accedi a Work',
   appModel: 'Modello',
   appCut: 'Taglia',
   appCopy: 'Copia',

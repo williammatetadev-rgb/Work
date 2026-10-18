@@ -1,9 +1,9 @@
-import { describe, expect, it, vi } from 'vitest'
+﻿import { describe, expect, it, vi } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { act, createElement } from 'react'
 import { createRoot } from 'react-dom/client'
-import type { NoteInfo } from '@genoffice/docx-engine'
+import type { NoteInfo } from '@work/docx-engine'
 import { PageEndnotes, PageFootnotes } from '../src/renderer/components/PageNoteAreas'
 import { endnotesAnchorY } from '../src/renderer/pagination'
 

@@ -1,12 +1,12 @@
-/**
+﻿/**
  * Wire implementations for the BYOK media providers. Image generation speaks
  * four shapes — OpenAI Images (OpenAI, Ark/Seedream, Zhipu/CogView, xAI,
  * custom endpoints; the vendors differ in size vocabulary and edit support),
  * Gemini native output / Imagen predict, DashScope multimodal-generation
  * (Qwen-Image) and MiniMax image_generation. Understanding speaks two: OpenAI
  * chat completions (video via a video_url part where the vendor accepts one)
- * and Gemini generateContent (inline or Files API). Genspark is not here — its
- * tools go through the gsk CLI in @genoffice/ai-search.
+ * and Gemini generateContent (inline or Files API). Work is not here — its
+ * tools go through the gsk CLI in @work/ai-search.
  */
 
 import { aiFetch } from './fetch'
@@ -44,7 +44,7 @@ export interface AnalyzeMediaInput {
   requirements: string
 }
 
-export type ByokMediaProviderId = Exclude<AiMediaProviderId, 'genspark'>
+export type ByokMediaProviderId = Exclude<AiMediaProviderId, 'work'>
 
 /** image generation can take minutes on the large models */
 const GENERATE_TIMEOUT_MS = 600_000
@@ -472,7 +472,7 @@ async function analyzeMediaOpenAi(
       throw new Error(
         `${meta.label} cannot analyze ${m.name ?? m.mime} (${m.mime}) here; ${
           meta.videoAnalysis ? 'audio' : 'video and audio'
-        } analysis needs Gemini or Genspark.`,
+        } analysis needs Gemini or Work.`,
       )
     }
   }

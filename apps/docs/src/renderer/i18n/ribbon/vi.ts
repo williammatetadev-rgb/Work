@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const vi = {
   ribbonAiCreditNote: 'Sử dụng AI và tiêu tốn tín dụng',
@@ -188,7 +188,7 @@ export const vi = {
   ribbonReplaceTip: 'Tìm và thay thế văn bản',
   ribbonSelectAll: 'Chọn tất cả',
   ribbonSelectAllTip: 'Chọn toàn bộ tài liệu',
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: 'Mở trợ lý AI',
   ribbonRemoveTableStyleTip: 'Xóa kiểu bảng',
   ribbonNoStyle: 'Không có kiểu',

@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const es = {
   appScTitle: 'Atajos de teclado',
@@ -321,13 +321,13 @@ export const es = {
   appTabBar: 'Barra',
   appTabClear: 'Borrar',
   appAiSettings: 'Configuración de IA',
-  appGensparkAccount: 'Cuenta de Genspark',
+  appWorkAccount: 'Cuenta de Work',
   appChecking: 'Comprobando…',
   appLoggedIn: 'Sesión iniciada',
   appLoggedInEmail: 'Sesión iniciada: {email}',
-  appNotLoggedIn: 'Sesión no iniciada (las funciones de IA requieren una cuenta de Genspark)',
+  appNotLoggedIn: 'Sesión no iniciada (las funciones de IA requieren una cuenta de Work)',
   appWaitingBrowserLogin: 'Esperando el inicio de sesión en el navegador…',
-  appLoginGenspark: 'Iniciar sesión en Genspark',
+  appLoginWork: 'Iniciar sesión en Work',
   appModel: 'Modelo',
   appCut: 'Cortar',
   appCopy: 'Copiar',

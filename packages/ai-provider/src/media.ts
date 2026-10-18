@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AiMediaProviderConfig,
   AiMediaProviderId,
   AiMediaProviderMeta,
@@ -21,10 +21,10 @@ export const DEEPSEEK_MEDIA_BASE_URL = 'https://api.deepseek.com/v1'
 // models in step with the chat catalog in providers.ts.
 export const AI_MEDIA_PROVIDERS: AiMediaProviderMeta[] = [
   {
-    id: 'genspark',
-    label: 'Genspark',
-    description: 'Image generation, media analysis and search through your Genspark sign-in',
-    keyPlaceholder: 'Not required - sign in to Genspark',
+    id: 'work',
+    label: 'Work',
+    description: 'Image generation, media analysis and search through your Work sign-in',
+    keyPlaceholder: 'Not required - sign in to Work',
     defaultBaseUrl: '',
     imageProtocol: 'openai-images',
     imageModels: [],
@@ -230,9 +230,9 @@ export function defaultAiMediaSettings(): AiMediaSettings {
     }
   }
   return {
-    imageProvider: 'genspark',
-    analysisProvider: 'genspark',
-    videoAnalysisProvider: 'genspark',
+    imageProvider: 'work',
+    analysisProvider: 'work',
+    videoAnalysisProvider: 'work',
     providers,
   }
 }
@@ -291,7 +291,7 @@ export function mediaConfigUsable(
 
 /**
  * The stored provider for one capability, honored only when it exists, has
- * that capability and is usable; anything else falls back to genspark so a
+ * that capability and is usable; anything else falls back to work so a
  * half-filled setup degrades to the signed-in default.
  */
 export function activeMediaProvider(
@@ -299,27 +299,27 @@ export function activeMediaProvider(
   capability: MediaCapability,
 ): AiMediaProviderId {
   const media = settings.media
-  if (!media) return 'genspark'
+  if (!media) return 'work'
   const id =
     capability === 'image'
       ? media.imageProvider
       : capability === 'video'
         ? media.videoAnalysisProvider
         : media.analysisProvider
-  if (!id || id === 'genspark') return 'genspark'
+  if (!id || id === 'work') return 'work'
   const meta = getMediaProviderMeta(id)
-  if (!meta || !providerHasCapability(meta, capability)) return 'genspark'
-  if (!mediaConfigUsable(meta, media.providers?.[id])) return 'genspark'
+  if (!meta || !providerHasCapability(meta, capability)) return 'work'
+  if (!mediaConfigUsable(meta, media.providers?.[id])) return 'work'
   return id
 }
 
-/** the active BYOK config for one capability, or null when it runs through Genspark */
+/** the active BYOK config for one capability, or null when it runs through Work */
 export function activeMediaConfig(
   settings: Pick<AiSettings, 'media'>,
   capability: MediaCapability,
-): { provider: Exclude<AiMediaProviderId, 'genspark'>; config: AiMediaProviderConfig } | null {
+): { provider: Exclude<AiMediaProviderId, 'work'>; config: AiMediaProviderConfig } | null {
   const provider = activeMediaProvider(settings, capability)
-  if (provider === 'genspark') return null
+  if (provider === 'work') return null
   return { provider, config: settings.media!.providers[provider] }
 }
 

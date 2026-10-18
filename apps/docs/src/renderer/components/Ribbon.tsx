@@ -1,6 +1,6 @@
-import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+﻿import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import type { Lang } from '@genoffice/i18n'
+import type { Lang } from '@work/i18n'
 
 export type ConvertFormat = 'pdf' | 'html' | 'md' | 'images'
 import type {
@@ -40,13 +40,13 @@ import type {
   TextboxParaDisplay,
   ThemeColors,
   ThemeFonts,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import {
   Dropdown,
   isSymbolFontFamily,
   useDismissablePopover,
   useRibbonCollapse,
-} from '@genoffice/ui'
+} from '@work/ui'
 import { HIGHLIGHT_CSS } from '../editor/extensions'
 import { applyCase, type CaseMode } from '../editor/case-transform'
 import { isRtlUiLang, setParagraphDirection, setSelectionAlign } from '../editor/direction'
@@ -161,7 +161,7 @@ import {
 import { WRAP_OPTIONS } from './ContextMenu'
 import { CropDialog, CutoutDialog } from './PictureDialogs'
 import {
-  GensparkMark,
+  WorkMark,
   IconAlignCenter,
   IconAlignJustify,
   IconAlignLeft,
@@ -824,7 +824,7 @@ function RibbonInner({
   const collapse = useRibbonCollapse('aidocs.ribbonCollapsed', {
     collapse: t('ribbonCollapse'),
     expand: t('ribbonExpand'),
-    // ⌥⌘K / Ctrl+Alt+K: the icon-only middle density (see genoffice#362)
+    // ⌥⌘K / Ctrl+Alt+K: the icon-only middle density (see work#362)
     compact: t('ribbonCompact'),
     expandFull: t('ribbonExpand'),
   })
@@ -3064,7 +3064,7 @@ function RibbonInner({
           </div>
         ) : tab === 'home' ? (
           <>
-            {/* ---- Genspark AI (first slot: entry + one-click AI actions) ---- */}
+            {/* ---- Work AI (first slot: entry + one-click AI actions) ---- */}
             <div className="ribbon-group">
               <div className="ribbon-group-items">
                 <button
@@ -3073,9 +3073,9 @@ function RibbonInner({
                   onClick={onToggleAi}
                 >
                   <span className="rb-big-icon">
-                    <GensparkMark size={26} />
+                    <WorkMark size={26} />
                   </span>
-                  <span>Genspark AI</span>
+                  <span>Work AI</span>
                 </button>
                 <button
                   className="rb-big ai-entry"
@@ -3200,7 +3200,7 @@ function RibbonInner({
                   <span>{t('aiMindMapBtn')}</span>
                 </button>
               </div>
-              <div className="ribbon-group-label">Genspark AI</div>
+              <div className="ribbon-group-label">Work AI</div>
             </div>
 
             <div className="ribbon-sep" />

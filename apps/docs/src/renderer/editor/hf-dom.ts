@@ -1,4 +1,4 @@
-import {
+﻿import {
   PAGE_MARK,
   TOTAL_PAGES_MARK,
   type HeaderFooter,
@@ -10,7 +10,7 @@ import {
   type HfTextBox,
   type Run,
   type SectionSettings,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import {
   cssLineHeight,
   cssRunFontFamily,

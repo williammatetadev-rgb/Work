@@ -1,8 +1,8 @@
-/**
- * GenOffice's own Genspark identity: device-code login (office_addin_auth,
- * app_type=genoffice) minting a gsk API key named "genoffice" — the key_name
+﻿/**
+ * Work's own Work identity: device-code login (office_addin_auth,
+ * app_type=work) minting a gsk API key named "work" — the key_name
  * lands in billing as billing_tag, attributing all traffic (incl. gsk CLI
- * subprocesses) to GenOffice. Stored in ~/.genoffice/auth.json, deliberately
+ * subprocesses) to Work. Stored in ~/.work/auth.json, deliberately
  * NOT the shared config.json that Claw Desktop overwrites on every launch.
  *
  * Flow: POST /device_code → browser approve → poll /token for a 30-day Bearer
@@ -25,8 +25,8 @@ export interface GskLoginProgress {
   error?: string
 }
 
-const APP_TYPE = 'genoffice'
-const KEY_NAME = 'genoffice'
+const APP_TYPE = 'work'
+const KEY_NAME = 'work'
 const HTTP_TIMEOUT_MS = 30_000
 
 /** https on the endpoint's registrable domain only; IP literals and single-label
@@ -48,7 +48,7 @@ export function isAllowedAuthUrl(raw: string, origin: string): URL | null {
 }
 
 function baseUrl(): string {
-  return (process.env.GSK_BASE_URL || 'https://www.genspark.ai').replace(/\/$/, '')
+  return (process.env.GSK_BASE_URL || 'https://www.work.ai').replace(/\/$/, '')
 }
 
 let cachedFetch: typeof fetch | undefined
@@ -106,7 +106,7 @@ async function proxyFallbackFetch(): Promise<typeof fetch | null> {
         session?: { fromPartition: (partition: string) => ProxySession }
       }
       if (session) {
-        const ses = session.fromPartition('genoffice-login-proxy')
+        const ses = session.fromPartition('work-login-proxy')
         await ses.setProxy({ proxyRules: proxyUrl })
         impl = ses.fetch.bind(ses)
       }
@@ -126,9 +126,9 @@ async function loginFetchChannels(): Promise<(typeof fetch)[]> {
   return proxyFallbackPreferred ? [fallback, primary] : [primary, fallback]
 }
 
-/** Override dir via GENOFFICE_AUTH_DIR (test isolation). */
-export function genofficeAuthPath(): string {
-  return join(process.env.GENOFFICE_AUTH_DIR || join(homedir(), '.genoffice'), 'auth.json')
+/** Override dir via WORK_AUTH_DIR (test isolation). */
+export function workAuthPath(): string {
+  return join(process.env.WORK_AUTH_DIR || join(homedir(), '.work'), 'auth.json')
 }
 
 export interface GenofficeAuth {
@@ -141,7 +141,7 @@ let cachedAuth: GenofficeAuth | null | undefined
 
 function readAuthFile(): GenofficeAuth | null {
   try {
-    const raw = asRecord(JSON.parse(readFileSync(genofficeAuthPath(), 'utf-8')))
+    const raw = asRecord(JSON.parse(readFileSync(workAuthPath(), 'utf-8')))
     if (typeof raw.api_key !== 'string' || !raw.api_key) return null
     return {
       apiKey: raw.api_key,
@@ -165,13 +165,13 @@ export function reloadGenofficeAuth(): void {
   cachedAuth = undefined
 }
 
-/** The GenOffice-named api key; '' when not signed in. Cached (invalidated by login/logout). */
-export function genofficeApiKey(): string {
+/** The Work-named api key; '' when not signed in. Cached (invalidated by login/logout). */
+export function workApiKey(): string {
   return loadGenofficeAuth()?.apiKey ?? ''
 }
 
 function saveAuth(auth: GenofficeAuth): void {
-  const path = genofficeAuthPath()
+  const path = workAuthPath()
   mkdirSync(dirname(path), { recursive: true })
   writeFileSync(
     path,
@@ -187,7 +187,7 @@ function saveAuth(auth: GenofficeAuth): void {
 
 function clearAuth(): void {
   try {
-    if (existsSync(genofficeAuthPath())) unlinkSync(genofficeAuthPath())
+    if (existsSync(workAuthPath())) unlinkSync(workAuthPath())
   } catch {
     /* local sign-out must not throw */
   }
@@ -416,7 +416,7 @@ async function runDeviceLogin(
 let activeLogin: { cancel: () => void } | null = null
 
 /**
- * Starts the GenOffice device-code login, cancelling a previous in-flight one
+ * Starts the Work device-code login, cancelling a previous in-flight one
  * (its device code would otherwise be approved into a dead flow). The caller
  * opens `url` in the system browser. Returns whether the flow was started.
  */
@@ -485,7 +485,7 @@ export function setGenofficeLoginOpener(openUrl: ((url: string) => void) | null)
 }
 
 /**
- * Drops GenOffice's own key from memory and disk when it equals `key` (the
+ * Drops Work's own key from memory and disk when it equals `key` (the
  * server answered 401: expired or revoked), so hasGskAuth() turns false and
  * the existing sign-in UI shows. Returns whether our key was dropped.
  */
@@ -564,7 +564,7 @@ export function recoverFromRejectedGskKey(
     if (
       !allowLogin ||
       generation !== signOutGeneration ||
-      genofficeLoginInFlight() ||
+      workLoginInFlight() ||
       autoLoginLaunched ||
       !loginOpener
     ) {
@@ -584,7 +584,7 @@ export function recoverFromRejectedGskKey(
 }
 
 /** True while a login started via startGenofficeLogin is in flight. */
-export function genofficeLoginInFlight(): boolean {
+export function workLoginInFlight(): boolean {
   return activeLogin !== null
 }
 
@@ -594,18 +594,18 @@ export function genofficeLoginInFlight(): boolean {
  * is the caller's browser opener (this module is Electron-free).
  */
 export function ensureGenofficeLogin(openUrl: (url: string) => void): void {
-  if (genofficeLoginInFlight()) return
+  if (workLoginInFlight()) return
   startGenofficeLogin((progress) => {
     if (progress.url) openUrl(progress.url)
   })
 }
 
 /**
- * Signs out of GenOffice only: best-effort server-side revoke of the
- * genoffice key, then local removal. The shared gsk CLI login
- * (~/.genspark-tool-cli) is untouched — terminal gsk and Claw keep working.
+ * Signs out of Work only: best-effort server-side revoke of the
+ * work key, then local removal. The shared gsk CLI login
+ * (~/.work-tool-cli) is untouched — terminal gsk and Claw keep working.
  */
-export async function genofficeLogout(): Promise<void> {
+export async function workLogout(): Promise<void> {
   // invalidate any in-flight recovery first: its re-mint or login must not undo this sign-out
   signOutGeneration++
   const auth = loadGenofficeAuth()
@@ -642,6 +642,6 @@ export function resetGenofficeAuthCache(): void {
 }
 
 /** Test hook: whether the proxy fallback channel is currently preferred. */
-export function genofficeProxyFallbackPreferred(): boolean {
+export function workProxyFallbackPreferred(): boolean {
   return proxyFallbackPreferred
 }

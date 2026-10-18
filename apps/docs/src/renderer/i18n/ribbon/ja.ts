@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const ja = {
   ribbonAiCreditNote: 'AI を呼び出し、クレジットを消費します',
@@ -197,7 +197,7 @@ export const ja = {
   ribbonSelectAll: 'すべて選択',
   ribbonSelectAllTip: '文書全体を選択',
   // Home · AI
-  ribbonAiAssistant: 'Genspark',
+  ribbonAiAssistant: 'Work',
   ribbonAiAssistantTip: 'AI アシスタントを開く',
   // Table Design
   ribbonRemoveTableStyleTip: '表のスタイルを削除',

@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import type { Block } from '@genoffice/docx-engine'
+﻿import { describe, expect, it } from 'vitest'
+import type { Block } from '@work/docx-engine'
 import {
   CHARS_PER_BLOCK,
   HUGE_DOC_REFUSE_WEIGHT,

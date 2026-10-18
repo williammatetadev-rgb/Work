@@ -1,4 +1,4 @@
-import { dirname, resolve } from 'node:path'
+﻿import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitest/config'
 
@@ -11,19 +11,19 @@ export default defineConfig({
   resolve: {
     alias: {
       // Subpath before the bare name: string aliases are prefix replacements
-      '@genoffice/electron-utils/remote-image': resolve(
+      '@work/electron-utils/remote-image': resolve(
         here,
         '../electron-utils/src/remote-image.ts',
       ),
-      '@genoffice/electron-utils/safe-remote-url': resolve(
+      '@work/electron-utils/safe-remote-url': resolve(
         here,
         '../electron-utils/src/safe-remote-url.ts',
       ),
-      '@genoffice/electron-utils/generated-images': resolve(
+      '@work/electron-utils/generated-images': resolve(
         here,
         '../electron-utils/src/generated-images.ts',
       ),
-      '@genoffice/ai-provider': resolve(here, '../ai-provider/src/index.ts'),
+      '@work/ai-provider': resolve(here, '../ai-provider/src/index.ts'),
     },
   },
   test: { include: ['tests/**/*.test.ts'] },

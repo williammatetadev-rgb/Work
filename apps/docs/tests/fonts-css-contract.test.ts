@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Weight contract of the JP Mincho fallback alias (fonts.css): Word's
  * Japanese serif faces ship no bold and Word synthesizes uniform thick
  * strokes, so the alias must register weight-normal only. A real W6 bold
@@ -17,7 +17,7 @@ function facesOf(family: string): string[] {
 }
 
 describe('JP Mincho fallback aliases synthesize bold', () => {
-  for (const family of ['GenOffice Hiragino Mincho', 'GenOffice MS Mincho']) {
+  for (const family of ['Work Hiragino Mincho', 'Work MS Mincho']) {
     it(`${family} registers weight-normal faces only`, () => {
       const faces = facesOf(family)
       expect(faces.length).toBeGreaterThan(0)

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Anchor resolution for the add_comment tool: a block index plus an optional
  * exact text match inside that block, turned into a document range the
  * comment mark can cover. Matching runs over the same live text the block
@@ -7,7 +7,7 @@
  */
 import type { Editor } from '@tiptap/core'
 import type { Node as ProseMirrorNode } from '@tiptap/pm/model'
-import type { CommentInfo } from '@genoffice/docx-engine'
+import type { CommentInfo } from '@work/docx-engine'
 import { liveText } from './doc-utils'
 
 export interface CommentAnchorInput {

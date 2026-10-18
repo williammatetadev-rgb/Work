@@ -1,5 +1,5 @@
-import { existsSync, readFileSync } from 'node:fs'
-import { writeJsonAtomic } from '@genoffice/electron-utils/atomic-write'
+﻿import { existsSync, readFileSync } from 'node:fs'
+import { writeJsonAtomic } from '@work/electron-utils/atomic-write'
 
 /**
  * The starred.json store behind the home screen's favorites. The path is the

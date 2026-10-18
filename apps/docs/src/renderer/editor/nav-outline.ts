@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Word's Navigation pane model: the heading tree, the "heading and its content"
  * range (heading start to the next heading of the same or a higher level), search
  * hit counts per subtree, and the subtree move/delete/level edits as transactions.
  */
 import type { Schema } from '@tiptap/pm/model'
 import { TextSelection, type Transaction } from '@tiptap/pm/state'
-import type { StyleInfo } from '@genoffice/docx-engine'
+import type { StyleInfo } from '@work/docx-engine'
 import type { HeadingRef } from './headings'
 import { matchContext, type FindMatch } from './find'
 

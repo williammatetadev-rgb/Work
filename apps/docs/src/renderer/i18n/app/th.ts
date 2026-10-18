@@ -1,4 +1,4 @@
-import type { zh } from './zh'
+﻿import type { zh } from './zh'
 
 export const th = {
   appScTitle: 'แป้นพิมพ์ลัด',
@@ -313,13 +313,13 @@ export const th = {
   appTabBar: 'แถบ',
   appTabClear: 'ล้าง',
   appAiSettings: 'การตั้งค่า AI',
-  appGensparkAccount: 'บัญชี Genspark',
+  appWorkAccount: 'บัญชี Work',
   appChecking: 'กำลังตรวจสอบ…',
   appLoggedIn: 'ลงชื่อเข้าใช้แล้ว',
   appLoggedInEmail: 'ลงชื่อเข้าใช้แล้ว: {email}',
-  appNotLoggedIn: 'ยังไม่ได้ลงชื่อเข้าใช้ (ฟีเจอร์ AI ต้องใช้บัญชี Genspark)',
+  appNotLoggedIn: 'ยังไม่ได้ลงชื่อเข้าใช้ (ฟีเจอร์ AI ต้องใช้บัญชี Work)',
   appWaitingBrowserLogin: 'กำลังรอการลงชื่อเข้าใช้ในเบราว์เซอร์…',
-  appLoginGenspark: 'ลงชื่อเข้าใช้ Genspark',
+  appLoginWork: 'ลงชื่อเข้าใช้ Work',
   appModel: 'โมเดล',
   appCut: 'ตัด',
   appCopy: 'คัดลอก',

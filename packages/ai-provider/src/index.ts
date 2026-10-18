@@ -1,4 +1,4 @@
-export type {
+﻿export type {
   AiCustomCompat,
   AiCustomEndpoint,
   AiCustomModelProfile,
@@ -23,7 +23,7 @@ export type {
   AiStreamChunk,
   AiStreamRequest,
   AiTokenUsage,
-  GenSparkAccountStatus,
+  WorkAccountStatus,
   LegacyAiSettings,
 } from './types'
 export {

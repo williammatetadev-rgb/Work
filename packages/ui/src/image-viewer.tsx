@@ -1,11 +1,11 @@
-/**
+﻿/**
  * Full-window picture viewer shared by the editors: fit / actual size / wheel
  * zoom, drag to pan, optional Save. Apps pass their own strings through
  * `labels` and import `image-viewer.css` for the chrome.
  */
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { MouseEvent as ReactMouseEvent, ReactNode, WheelEvent as ReactWheelEvent } from 'react'
-import type { Lang } from '@genoffice/i18n'
+import type { Lang } from '@work/i18n'
 import { useImageViewerFocus } from './image-viewer-focus'
 import { IMAGE_VIEWER_TITLES } from './strings-image-viewer'
 

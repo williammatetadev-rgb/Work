@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+﻿import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import {
   DROP_OPEN_CHANNEL,
@@ -50,7 +50,7 @@ type GlobalWithWindow = { window?: unknown }
 /** the idempotence flag lives on globalThis; clear it between installs */
 function resetInstallFlag(): void {
   delete (globalThis as Record<symbol | string, unknown>)[
-    Symbol.for('genoffice.drop-open-installed')
+    Symbol.for('work.drop-open-installed')
   ]
 }
 

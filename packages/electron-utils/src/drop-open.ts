@@ -1,4 +1,4 @@
-/// Drag & drop a local document file anywhere in the app window to open it.
+﻿/// Drag & drop a local document file anywhere in the app window to open it.
 ///
 /// Renderers share one main process (the shell hosts every editor view), so the
 /// bridge only has to resolve dropped files to paths and send them over ONE
@@ -100,7 +100,7 @@ export function partitionDropPayload(raw: unknown): {
 
 /** Symbol.for keeps repeated installs idempotent when several bundled copies of
  *  this module end up in one process (mirrors navigation-guard). */
-const INSTALLED = Symbol.for('genoffice.drop-open-installed')
+const INSTALLED = Symbol.for('work.drop-open-installed')
 
 /**
  * Preload-side hook: makes `drop` fire for document drags anywhere in the

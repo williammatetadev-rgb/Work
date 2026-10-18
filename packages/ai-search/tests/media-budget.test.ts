@@ -1,4 +1,4 @@
-import { mkdtempSync, writeFileSync } from 'node:fs'
+﻿import { mkdtempSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { describe, expect, it, vi, beforeEach } from 'vitest'
@@ -31,7 +31,7 @@ function dataUrl(bytes: number, mime = 'image/png'): string {
 const TINY = { maxItems: 3, maxItemBytes: 64, maxTotalBytes: 128, concurrency: 2 }
 
 function writeSettings(mediaProvider: string): string {
-  const dir = mkdtempSync(join(tmpdir(), 'genoffice-media-budget-'))
+  const dir = mkdtempSync(join(tmpdir(), 'work-media-budget-'))
   const path = join(dir, 'ai-settings.json')
   writeFileSync(
     path,
@@ -86,7 +86,7 @@ describe('loadMediaReferences budget', () => {
 
   it('rejects a total that only crosses the cap once the bytes have landed', async () => {
     // local files declare no encoded size, so only the running total can catch this
-    const dir = mkdtempSync(join(tmpdir(), 'genoffice-media-files-'))
+    const dir = mkdtempSync(join(tmpdir(), 'work-media-files-'))
     const refs = Array.from({ length: 3 }, (_, i) => {
       const path = join(dir, `shot-${i}.png`)
       writeFileSync(path, Buffer.alloc(50, 1))
@@ -124,10 +124,10 @@ describe('media tool aggregate budget', () => {
     expect(gskAnalyze).not.toHaveBeenCalled()
   })
 
-  it('analyze_media still hands a budget failure to Genspark when only one provider is configured', async () => {
-    gskAnalyze.mockResolvedValue('from genspark' as never)
+  it('analyze_media still hands a budget failure to Work when only one provider is configured', async () => {
+    gskAnalyze.mockResolvedValue('from work' as never)
     // openai reads images but not video, so a budget failure still has a
-    // Genspark route to fall back to (the pre-existing size-cap behavior)
+    // Work route to fall back to (the pre-existing size-cap behavior)
     const result = await analyzeMediaTool(writeSettings('openai'), {
       mediaUrls: Array.from({ length: 13 }, () => dataUrl(8)),
       requirements: 'describe these',

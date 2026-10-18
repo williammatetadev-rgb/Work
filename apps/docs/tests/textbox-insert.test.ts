@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Textbox insertion tests - Item 1: create textbox → save → re-parse
  *
  * Uses buildTextboxParagraphXml() to produce genXml nodes, verifying:
@@ -14,7 +14,7 @@ import {
   parseDocx,
   saveDocx,
   type TextboxDisplay,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { buildDocx } from '../../../packages/docx-engine/tests/helpers/build-docx'
 import { blocksToPmDoc, pmDocToSavePlan, type PmNode } from '../src/renderer/editor/convert'
 import { editorExtensions } from '../src/renderer/editor/extensions'

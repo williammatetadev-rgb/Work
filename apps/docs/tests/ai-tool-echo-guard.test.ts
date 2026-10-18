@@ -1,11 +1,11 @@
-import { describe, expect, it } from 'vitest'
+﻿import { describe, expect, it } from 'vitest'
 import { Editor } from '@tiptap/core'
 import {
   BLANK_BULLET_NUM_ID,
   BLANK_ORDERED_NUM_ID,
   buildBlankDocx,
   parseDocx,
-} from '@genoffice/docx-engine'
+} from '@work/docx-engine'
 import { blocksToPmDoc } from '../src/renderer/editor/convert'
 import { executeTool } from '../src/renderer/ai/tools'
 
